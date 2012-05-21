@@ -1,0 +1,133 @@
+/*
+ *	Conseil de mélange de couleur 
+ * 	en fonction du site demandé
+ * 	--> destination enfant différence de teinte mais même valeur même saturation (jaune pétant, rouge pétant, bleu pétant)
+ * 	--> destination biologie différence de saturation mais même valeur "vert d'eau" "vert pétant"
+ * 	
+ * 	--> colorjack.com
+ * 
+ * 	couleur de fond et couleur toniques
+ * 	
+ * 	a éviter les couleurs analogues qui se suivent sur le cercle chromatique
+ * 	a éviter les couleurs opposées
+ * 	
+ * 	opposées secondaire 
+ * 
+ * 	deux choix pour mettre en évidence soit couleur opposée comme sur le bon coin
+ * 	ou alors on augmente la luminositée
+ * 
+ */
+ 
+/**********************************************************************/
+/* 							STRUCTURE DU SITE 					      */
+/**********************************************************************/
+
+body { 
+		width:auto;
+		height:auto;
+		font-family:Verdana,Calibri,Arial;
+		font-size:0.9em;
+		position:relative;
+        z-index:0;
+}
+
+table {
+	font-family:Verdana,Calibri,Arial;
+	font-size:0.9em;
+}
+
+#header	{
+		position:relative;
+		height:200px;
+		background-color:#00759E;
+}
+
+#login	{
+	position: relative;
+	float:right;
+	background-color:#00BDFF;
+	padding:5px;
+} 	
+
+.login input {
+	float:left;
+	clear:left;
+	width:150px;
+}
+
+
+#menu 	{
+	float:left;
+	clear:left;
+	width:100%;
+	height:auto;
+	background-color:#009E30;
+}
+#liens  { 
+	background-color:#00DA42;
+	float:left;
+}		
+
+#contenu { 
+	float:left;
+	clear:both;
+	width:100%;
+	background-color:#FFD75F;	
+}
+		
+#zonemessage{ 
+	float:left;
+	width:100%;
+	clear:both;
+}
+
+#zonemessage .ok {
+	background-color:#70cf49;
+	border:0px solid #70cf49;  
+}
+#zonemessage .erreur {
+	background-color:#fc4970;
+	border:0px solid #fc4970;  
+}
+#zonemessage .info {
+	background-color:#4970fc;
+	border:0px solid #4970fc;
+}
+
+/**********************************************************************/
+/* 								UTILS								  */
+/**********************************************************************/
+
+input:focus {
+/*
+			background-color:#ecffb8;
+*/
+			}
+
+input 	{
+		-moz-border-radius:5px; 
+		-webkit-border-radius:5px; 
+		-khtml-border-radius:5px;
+		}
+			
+.floatleft{float:left;}
+.floatright{float:right;}
+
+
+div{
+	border:0px dashed gray;
+	width:auto;
+}
+
+legend 	{
+
+}
+		
+fieldset{
+	float:left;
+	background-color:#FFFFFF;
+	width:100%;
+	border:0px solid black;
+} 
+
+.clear{clear:both; border:none;}
