@@ -1,6 +1,7 @@
 NF17
 ====
 
+Auteurs:
 Préambule: Utiliser PHP 5.5 / PostgreSql
 
 
