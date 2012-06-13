@@ -1,0 +1,1 @@
+Manque contrainte FOREIGN KEY Produit => Rayon (agrégation * 1,*)

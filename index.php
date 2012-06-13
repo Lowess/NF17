@@ -35,7 +35,10 @@ Controller::load_content();
 	</head>
 	<body>
 		<div id='header'>
-			Ici le header
+			<a href="">Accès Client</a><br />
+			<a href="">Accès Responsable Marketing</a><br />
+			<a href="?module=Produit">Accès Responsable Catalogue</a><br />
+			<a href="">Accès Responsable Livraison</a><br />
 		</div>
 		
 		<div id='menu'>
@@ -49,10 +52,10 @@ Controller::load_content();
 				?>
 			</div>
 			<div id='liens'>
-				Ceci est l'espace de liens<br />
+				Ceci est l'accès aux différents modules<br />
 				<a href="?module=Rayon">Rayon</a>
-				<a href="">Liens 2</a>
-				<a href="">Liens 3</a>
+				<a href="?module=Produit">Produits</a>
+				<a href="">Pannier</a>
 			</div>
 		</div>
 		
@@ -62,7 +65,7 @@ Controller::load_content();
 		?>
 		<div id='contenu'>
 			Ceci est la zone d'affichage de contenu
-			
+				
 			<?php
 				Controller::get_content();
 			?>	
