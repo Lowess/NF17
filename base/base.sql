@@ -56,6 +56,7 @@ CREATE TABLE IF NOT EXISTS tProduit(
 	categorie VARCHAR(200),
 	baremePromo FLOAT
 );
+CREATE SEQUENCE seq_tProduit;
 
 CREATE TABLE IF NOT EXISTS tAssociation(
 	id INT NOT NULL,
