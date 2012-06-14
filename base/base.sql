@@ -54,7 +54,9 @@ CREATE TABLE IF NOT EXISTS tProduit(
 	prixDeBase FLOAT,
 	stock INT,
 	categorie VARCHAR(200),
-	baremePromo FLOAT
+	baremePromo FLOAT,
+	idRayon VARCHAR(200) NOT NULL,
+	FOREIGN KEY (idRayon) REFERENCES tRayon (theme)
 );
 CREATE SEQUENCE seq_tProduit;
 

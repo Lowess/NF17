@@ -3,17 +3,19 @@
 	
 	<form enctype="multipart/form-data" action='?module=Produit&action=valide' method='post' class='form_ajout'>
 		
+	    	<input type='hidden' id='id' name='id' value="<?php if(isset($p)) echo $p->id; ?>">
+
 	    	<label>nom du produit</label>
-	    	<input type='text' id='nom' name='nom' value="<?php echo Form::get('nom') ?>">
+	    	<input type='text' id='nom' name='nom' value="<?php if(isset($p)) echo $p->nom; ?>">
 
 			<label>date de péremption (jj/mm/aaaa)</label>
-			<input type='text' id='datePeremption' name='datePeremption' value="<?php echo Form::get('datePeremption') ?>">
+			<input type='text' id='datePeremption' name='datePeremption' value="<?php if(isset($p)) echo $p->datePeremption; ?>">
 
 			<label>prix de base</label>
-			<input type='text' id='prixDeBase' name='prixDeBase' value="<?php echo Form::get('prixDeBase') ?>">
+			<input type='text' id='prixDeBase' name='prixDeBase' value="<?php if(isset($p)) echo $p->prixDeBase; ?>">
 
 			<label>stock</label>
-			<input type='text' id='stock' name='stock' value="<?php echo Form::get('stock') ?>">
+			<input type='text' id='stock' name='stock' value="<?php if(isset($p)) echo $p->stock; ?>">
 
 			<label>categorie</label>
 			<select id='categorie' name='categorie'>
@@ -37,6 +39,15 @@
 			<label>bareme promo</label>
 			<input type='text' id='baremePromo' name='baremePromo' value="<?php echo Form::get('baremePromo') ?>">
 
+			<label>rayon d'appartenance</label>
+			<select id='idRayon' name='idRayon'>
+				<?php
+					foreach($lr as $l=>$r){
+						echo"<option value='{$r->theme}'>{$r->theme}</option>";
+					}
+				?>
+			</select>
+			
 			<div class="endform">
 				<a href="?module=Produit" style="text-decoration:none"><input type='reset' value='Annuler' class='valider'></a>
 				<input class='valider' type='submit' value='Valider'>
