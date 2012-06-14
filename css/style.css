@@ -34,6 +34,16 @@ body {
 table {
 	font-family:Verdana,Calibri,Arial;
 	font-size:0.9em;
+	
+	border:1px solid #000000; 
+	text-align:center; 
+	padding:0px; 
+	border-spacing:0; 
+	-moz-border-radius:5px; 
+	-webkit-border-radius:5px; 
+	-khtml-border-radius:5px;		
+	border: 1px solid black;
+
 }
 
 #header	{

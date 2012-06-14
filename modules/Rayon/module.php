@@ -19,7 +19,6 @@ switch ( Form::get('action') ){
 
 function afficher(){
 	$tab=Rayon::Lister();
-	Site::debug($tab);
 	
 	include('vue.php');
 }
