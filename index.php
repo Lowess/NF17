@@ -64,8 +64,6 @@ Controller::load_content();
 				Site::liste_message();
 		?>
 		<div id='contenu'>
-			Ceci est la zone d'affichage de contenu
-				
 			<?php
 				Controller::get_content();
 			?>	

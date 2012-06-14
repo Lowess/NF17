@@ -14,6 +14,8 @@ switch ( Form::get('action') ){
 		editer();break;
 	case 'supprimer':
 		supprimer();break;
+	case 'trie':
+		trier();break;
 	default:
 		afficher();break;
 }
@@ -22,6 +24,7 @@ switch ( Form::get('action') ){
 
 function afficher(){
 	$tab=Produit::Lister();
+	include('recherche.php');
 	include('vue.php');
 }
 
@@ -44,6 +47,13 @@ function supprimer(){
 	
 	Site::message_info("Formulaire traité correctement",OK);			
 	Site::redirect("index.php?module=Produit");
+}
+
+function trier(){
+		Site::debug(Form::get('champ'));
+		Site::debug(Form::get('type'));
+		$tab=Produit::Lister();
+		include('vue.php');
 }
 
 function traitement(){

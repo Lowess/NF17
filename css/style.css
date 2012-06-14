@@ -148,8 +148,22 @@ fieldset{
 	float:left;
 	background-color:#FFFFFF;
 	border:1px solid black;
+	margin-top:10px;
+	-moz-border-radius:5px; 
+	-webkit-border-radius:5px; 
+	-khtml-border-radius:5px;		
+	
+} 
+
+legend{
+	background-color:#FFFFFF;
+	border:1px solid black;
+	-moz-border-radius:5px; 
+	-webkit-border-radius:5px; 
+	-khtml-border-radius:5px;	
 } 
 
 .clear{clear:both; border:none;}
 
 .endform{float:left; clear:both; margin-left:220px; width:auto;}
+
