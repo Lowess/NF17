@@ -33,9 +33,9 @@ Controller::load_content();
 	</head>
 	<body>
 		<div id='header'>
-			<a href="">Accès Responsable Marketing</a><br />
-			<a href="?module=Produit">Accès Responsable Catalogue</a><br />
-			<a href="">Accès Responsable Livraison</a><br />
+			<a href="?module=login&action=connectionMarketing">Accès Responsable Marketing</a><br />
+			<a href="?module=login&action=connectionCatalogue">Accès Responsable Catalogue</a><br />
+			<a href="?module=login&action=connectionLivraison">Accès Responsable Livraison</a><br />
 		</div>
 		
 		<div id='menu'>
