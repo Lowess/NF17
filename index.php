@@ -32,7 +32,7 @@ Controller::load_content();
 	
 	</head>
 	<body>
-		<div id='header'>a
+		<div id='header'>
 			<a href="?module=login&action=connectionMarketing">Accès Responsable Marketing</a><br />
 			<a href="?module=login&action=connectionCatalogue">Accès Responsable Catalogue</a><br />
 			<a href="?module=login&action=connectionLivraison">Accès Responsable Livraison</a><br />
