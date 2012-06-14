@@ -35,6 +35,16 @@ Class Rayon {
 		return $res;
 	}
 	
+	public static function ChercherParId($id){
+		$sql="SELECT * FROM tRayon WHERE theme='$id'";
+		$tab=DB::Sql($sql);
+		$t=pg_fetch_assoc($tab);	
+		$r=new Rayon();
+		$r->Creer($t['theme']);
+	
+		return $r;
+	}
+	
 	static public function ListerParRayon(){
 		$rayons=self::Lister();
 		$fres=array();
@@ -65,14 +75,8 @@ Class Rayon {
 
 	//Méthodes de classe privées	
 	function Inserer(){	
-		$sql="INSERT INTO tRayon VALUES (...)";
+		$sql="INSERT INTO tRayon(theme) VALUES ('{$this->theme}')";
 		$res=DB::Sql($sql);
-		return mysql_insert_id();
-	}
-
-	function Modifier(){
-		$sql="UPDATE tRayon SET ...";
-		$res=DB::Sql($sql);	
 	}
 };
 

@@ -61,6 +61,7 @@ function rechercher(){
 	$tab=Produit::RechercheMultiple();
 	include('vue.php');
 }
+
 function traitement(){
 
 	$id=Form::get('id');

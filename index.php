@@ -4,8 +4,6 @@
 header('Content-type:text/html; charset=utf-8');
 ini_set('display_errors',1);
 
-echo 'je sers à rien comme phrase... :D';
-
 require("toolbox/header.php");
 require("toolbox/frontcontroller.php");
 
@@ -35,7 +33,6 @@ Controller::load_content();
 	</head>
 	<body>
 		<div id='header'>
-			<a href="">Accès Client</a><br />
 			<a href="">Accès Responsable Marketing</a><br />
 			<a href="?module=Produit">Accès Responsable Catalogue</a><br />
 			<a href="">Accès Responsable Livraison</a><br />

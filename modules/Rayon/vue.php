@@ -4,21 +4,27 @@
 	<table border=1>
 		<tr>
 			<th>Themes</th>
+			<th colspan="3">Actions</th>
 		</tr>
 		<?php
 			foreach($tab as $t){
-				echo"<tr><td>$t->theme</td></tr>";
+				echo"<tr>";
+				echo"<td>$t->theme</td>";
+				echo"<td><a href='?module=Rayon&action=ajout'><img src='template/addfile.png'/></a></td>";
+				echo"<td><a href='?module=Rayon&action=supprimer&id={$t->theme}'><img src='template/delete.png'/></a></td>";
+				echo"</tr>";
+				
 			}
 		?>
 	</table>
 </fieldset>
 
-<fieldset style='clear:left'>
+<fieldset>
 	<legend>Liste des produits par rayon</legend>
 
 	<?php
 		foreach($tab2 as $rayon => $r){
-			echo "<fieldset style='clear:left'>";
+			echo "<fieldset style='clear:left;'>";
 			echo"<legend>Rayon: $rayon</legend>";
 				if(!empty($r)){
 					echo"<table border=1>";

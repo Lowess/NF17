@@ -25,7 +25,7 @@
 body { 
 		width:auto;
 		height:auto;
-		margin:0% 20% 0% 20%;
+		margin:0% 10% 0% 10%;
 		font-family:Verdana,Calibri,Arial;
 		font-size:0.9em;
 		position:relative;
@@ -36,7 +36,6 @@ table {
 	font-family:Verdana,Calibri,Arial;
 	font-size:0.9em;
 	
-	border:1px solid #000000; 
 	text-align:center; 
 	padding:0px; 
 	border-spacing:0; 
@@ -48,9 +47,11 @@ table {
 }
 
 #header	{
-		position:relative;
-		height:200px;
-		background-color:#00759E;
+	position:relative;
+	height:200px;
+	background-color:#00759E;
+	/*background-image:url('../template/logo.png');
+	background-repeat: no-repeat no-repeat;*/
 }
 
 #login	{
@@ -83,7 +84,13 @@ table {
 	float:left;
 	clear:both;
 	width:100%;
-	background-color:#FFD75F;	
+	margin-top:2%;
+	/*background-color:#FFD75F;	*/
+	border: 3px solid #66aa22;
+	box-shadow: 8px 8px 0px #dddddd; 
+	-moz-border-radius:5px; 
+	-webkit-border-radius:5px; 
+	-khtml-border-radius:5px;
 }
 		
 #zonemessage{ 
@@ -125,7 +132,7 @@ input{
 select{
 	-moz-border-radius:5px; 
 	-webkit-border-radius:5px; 
-	-khtml-border-radius:5px;		
+	-khtml-border-radius:5px;
 	float:left;
 }			
 
@@ -148,12 +155,21 @@ label{
 fieldset{
 	float:left;
 	background-color:#FFFFFF;
-	border:1px solid black;
-	margin-top:10px;
+	border:2px solid black;
+	margin:3% 1% 0% 1%;
 	-moz-border-radius:5px; 
 	-webkit-border-radius:5px; 
 	-khtml-border-radius:5px;		
-	
+} 
+
+fieldset fieldset{
+	float:left;
+	background-color:#FFF;
+	border:2px solid #88bb33;
+	margin:3% 1% 0% 1%;
+	-moz-border-radius:5px; 
+	-webkit-border-radius:5px; 
+	-khtml-border-radius:5px;		
 } 
 
 legend{
