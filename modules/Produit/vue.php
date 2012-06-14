@@ -1,7 +1,11 @@
+<?php 	include('recherche.php'); ?>
 <fieldset class="clear">
 	<legend>Liste des produits</legend>
 
 	<!--<a href="?module=Produit&action=ajout">Ajouter un nouveau produit</a>-->
+	<?php
+		if(!empty($tab)){
+	?>
 	<table border=1>
 		<tr>
 			<th>
@@ -62,6 +66,12 @@
 					echo"<td><a href='?module=Produit&action=supprimer&id={$t->id}'><img src='template/delete.png'/></a></td>";
 				echo"</tr>";
 			}
+		}
+		else{
+			echo"Aucun produit trouvé<br /><br />";
+			echo"<a href='?module=Produit&action=ajout'><img src='template/addfile.png'/> Ajouter un nouveau produit </a>";
+		}
+				
 		?>
 	</table>
 </fieldset>

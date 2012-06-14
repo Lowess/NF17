@@ -19,7 +19,7 @@ switch ( Form::get('action') ){
 
 function afficher(){
 	$tab=Rayon::Lister();
-	
+	$tab2=Rayon::ListerParRayon();
 	include('vue.php');
 }
 

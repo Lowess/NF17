@@ -37,12 +37,21 @@ Class Produit {
 		
 		return $p;
 	}
-		
-	public static function Lister(){
+	
+	public static function Trier ($champ,$type)
+	{		
+		//On vérifie que les paramètre de trie attendu sont bien les bons
+		if ($type=="ASC" or $type=="DESC")
+			$sql=" ORDER BY $champ $type";
+		return(self::Lister($sql));
+	}
+
+	public static function Lister($tri=""){
 		$sql="SELECT * FROM tProduit";
+		$sql.=$tri;
 		$tab=DB::SqlToArray($sql);
 		$res=array();
-		
+		//Site::debug($sql);
 		foreach($tab as $t){
 			$p=new Produit();
 			$p->Creer($t['nom'], $t['dateperemption'], $t['prixdebase'], $t['stock'], $t['categorie'], $t['baremepromo'], $t['idrayon'], $t['id']);
@@ -54,6 +63,53 @@ Class Produit {
 			$res[]=$p;
 		}
 		return $res;
+	}
+	
+	static function RechercheMultiple()
+	{
+		$nom=Form::get('rech_nom');
+		
+		$index=Form::get('rech_categorie');
+		if(!empty($index))
+			$categorie=$_SESSION['GLOBAL_CATEGORIE'][$index];
+		
+		$rayon=Form::get('rech_idRayon');
+		
+		if(isset($nom) OR isset($categorie) OR isset($rayon))
+		{	
+			$sql = "SELECT * FROM tProduit";
+			//Contient les conditions
+			$conds=array();
+			if(!empty($nom))
+				$conds[]="tProduit.nom LIKE '%$nom%'"; 
+			if(!empty($categorie))
+				$conds[]="tProduit.categorie = '$categorie'"; 
+			if(!empty($rayon))
+				$conds[]="tProduit.idRayon = '$rayon'"; 
+			
+			//-------------------
+			//Compose la requete dynamique
+			foreach($conds as $c=>$condition)
+				if($c==0)
+					$sql=$sql." WHERE ".$condition;
+				else	
+					$sql=$sql." AND ".$condition;
+			
+			$tab=DB::SqlToArray($sql);
+			$res=array();
+			Site::debug($sql);
+			foreach($tab as $t){
+				$p=new Produit();
+				$p->Creer($t['nom'], $t['dateperemption'], $t['prixdebase'], $t['stock'], $t['categorie'], $t['baremepromo'], $t['idrayon'], $t['id']);
+				
+				//Gére la date
+				$e1=explode(" ",$p->datePeremption);
+				$e2=explode("-",$e1[0]);
+				$p->datePeremption=$e2[2]."/".$e2[1]."/".$e2[0];
+				$res[]=$p;
+			}
+			return $res;
+		}
 	}
 	//Méthodes de classe publiques
 	public function Enregistrer(){

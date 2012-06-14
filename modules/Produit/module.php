@@ -16,6 +16,8 @@ switch ( Form::get('action') ){
 		supprimer();break;
 	case 'trie':
 		trier();break;
+	case 'recherche':
+		rechercher();break;
 	default:
 		afficher();break;
 }
@@ -23,8 +25,8 @@ switch ( Form::get('action') ){
 
 
 function afficher(){
+	$lr=Rayon::Lister();
 	$tab=Produit::Lister();
-	include('recherche.php');
 	include('vue.php');
 }
 
@@ -50,31 +52,17 @@ function supprimer(){
 }
 
 function trier(){
-		Site::debug(Form::get('champ'));
-		Site::debug(Form::get('type'));
-		$tab=Produit::Lister();
-		include('vue.php');
+	$tab=Produit::Trier(Form::get('champ'),Form::get('type'));
+	include('vue.php');
 }
 
+function rechercher(){
+	$lr=Rayon::Lister();
+	$tab=Produit::RechercheMultiple();
+	include('vue.php');
+}
 function traitement(){
 
-$GLOBAL_CATEGORIE=array(	1 => "Produits laitiers et similaires",
-							2 => "Matières grasses et huiles",
-							3 => "Glaces de consommation",
-							4 => "Fruits et légumes",
-							5 => "Confiserie",
-							6 => "Céréales et produits à base de céréales",
-							7 => "Produits de boulangerie",
-							8 => "Viande et produits carnés, volaille et gibier inclus",
-							9 => "Poisson et produits de la pêche",
-							10 => "Oeufs et produits à base d => oeufs",
-							11 => "Édulcorants",
-							12 => "Sels, épices, potages, sauces, salades",
-							13 => "Aliments destinés à une alimentation particulière",
-							14 => "Boissons",
-							15 => "Autres"
-					);
-						
 	$id=Form::get('id');
 	
 	$nom=Form::get('nom');
@@ -87,7 +75,7 @@ $GLOBAL_CATEGORIE=array(	1 => "Produits laitiers et similaires",
 	
 	$stock=Form::get('stock');
 	
-	$categorie=$GLOBAL_CATEGORIE[Form::get('categorie')];
+	$categorie=$_SESSION['GLOBAL_CATEGORIE'][Form::get('categorie')];
 	
 	$baremePromo=Form::get('baremePromo');
 	if(empty($baremePromo)) $baremePromo=0;
