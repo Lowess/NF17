@@ -13,7 +13,7 @@
 	</table>
 </fieldset>
 
-<fieldset>
+<fieldset style='clear:left'>
 	<legend>Liste des produits par rayon</legend>
 
 	<?php
@@ -30,7 +30,6 @@
 							<th>Stock</th>
 							<th>Categorie</th>
 							<th>Barème promo</th>
-							<th>Rayon d'appartenance</th>
 						</tr>";
 						foreach($r as $produit => $p){
 							echo"<tr>";
