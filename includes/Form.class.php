@@ -33,8 +33,6 @@ class Form{
 			return  htmlentities(($_SESSION['var_formulaires'][$variable]),ENT_QUOTES,'UTF-8');
 		else
 			return "";
-	 
-	 
 	}
  
 }
