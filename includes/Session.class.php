@@ -7,30 +7,26 @@ class Session
 {
  
 	public static $user;
-	public static $panier;
  
-	function ouverte() {
-		return (isset($_SESSION['user']) && isset($_SESSION['panier']));
+	function ouverte()
+	{
+		return isset($_SESSION['user']);
 	}
  
-	function ouvrir($user, $panier=array())
+	function ouvrir($user)
 	{
 		$_SESSION['user']=$user;
-		$_SESSION['panier']=$panier;
 		self::restaurer();
 	}
 	function fermer()
 	{
 		unset($_SESSION['user']);
-		unset($_SESSION['panier']);
 	}
-	
 	function restaurer()
 	{
 		if(self::ouverte())
 		{
 			self::$user=$_SESSION['user'];	
-			self::$panier=$_SESSION['panier'];	
 		}
  
 	}

@@ -53,7 +53,7 @@ Controller::load_content();
 			if (isset($_SESSION['user']) && $_SESSION['user'] == 'client') {
 			?>
 				<div id='liens'>
-					<a href="">Pannier</a>
+					<a href="?module=Panier">Panier</a>
 				</div>
 			<?php
 			} else {
@@ -96,6 +96,7 @@ Controller::load_content();
 			if(Site::messages())
 				Site::liste_message();
 		?>
+	
 		<div id='contenu'>
 			<?php
 				Controller::get_content();

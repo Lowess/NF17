@@ -2,6 +2,25 @@
 
 Class Client {
 	//Attributs
+	public $login;
+	public $mdp;
+	public $nom;
+	public $prenom;
+	public $adresse;
+	public $age;
+	public $pointFidelite;
+	public $type;
+	
+	public function Creer($login, $mdp, $nom, $prenom, $adresse, $age, $pointFidelite, $type){
+		$this->login=$login;
+		$this->mdp=$mdp;
+		$this->nom=$nom;
+		$this->prenom=$prenom;
+		$this->adresse=$adresse;
+		$this->age=$age;
+		$this->pointFidelite=$pointFidelite;
+		$this->type=$type;
+	}
 	
 	//Méthodes statiques
     public static function Connection($login, $pass) {

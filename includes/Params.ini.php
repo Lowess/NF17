@@ -25,6 +25,7 @@ if ($_SERVER['SERVER_ADDR'] == '127.0.0.1') {
 define('DEBUG',0);
 
 define('CLASSES',dirname($_SERVER["SCRIPT_FILENAME"])."/classes/");
+define('INCLUDES',dirname($_SERVER["SCRIPT_FILENAME"])."/includes/");
 define('SCRIPTS',dirname($_SERVER["SCRIPT_FILENAME"])."/scripts/");
 
 $_SESSION['GLOBAL_CATEGORIE']=array(	1 => "Produits laitiers et similaires",

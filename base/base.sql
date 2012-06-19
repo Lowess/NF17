@@ -90,7 +90,7 @@ create table if not exists tpanier(
 	login varchar(50),
 	foreign key (login) references tclient (login)
 );
-CREATE SEQUENCE seq_tPannier;
+CREATE SEQUENCE seq_tPanier;
 
 create table if not exists tcontient(
 	idproduit int not null,
