@@ -1,4 +1,5 @@
 -- Script d'insertion en base
+
 INSERT INTO tRayon (theme) VALUES ('Nouveautes');
 INSERT INTO tRayon (theme) VALUES ('Frais libre service');
 INSERT INTO tRayon (theme) VALUES ('Frais traditionnel');
@@ -11,13 +12,15 @@ INSERT INTO tRayon (theme) VALUES ('Boissons sans alcool');
 INSERT INTO tRayon (theme) VALUES ('Vins et Spiritueux');
 INSERT INTO tRayon (theme) VALUES ('Hygiene parfumerie');
 INSERT INTO tRayon (theme) VALUES ('Entretien');
-INSERT INTO tRayon (theme) VALUES ('maison');
+INSERT INTO tRayon (theme) VALUES ('Maison');
 INSERT INTO tRayon (theme) VALUES ('Produit BIO et ecologique');
+
+
 
 INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (1,'Jambon Herta x4', to_timestamp('12 Jun 2012', 'DD Mon YYYY'), 2.64, 40, 'Viandes', 0, 'Nouveautes');
 INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (2,'Spaghetti Panzani 3min', to_timestamp('31 Dec 2012', 'DD Mon YYYY'), 1.81, 100, 'Pates', 0, 'Nouveautes');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (3,'Pack de lait Paturage de France', to_timestamp('11 Aug 2012', 'DD Mon YYYY'), 4.12, 40, 'Produits Laitiers', 0, 'Nouveautes');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (4,'La laiti¨¨re mousse au chocolat x4', to_timestamp('21 Jul 2012', 'DD Mon YYYY'), 3.08, 20, 'Produits Laitiers', 0, 'Nouveautes');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (3,'Pack de lait Paturage de France', to_timestamp('11 Aug 2012', 'DD Mon YYYY'), 4.12, 40, 'Produits Laitiers', 0,'Nouveautes');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (4,'La laitre mousse au chocolat x4', to_timestamp('21 Jul 2012', 'DD Mon YYYY'), 3.08, 20, 'Produits Laitiers', 0, 'Nouveautes');
 INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (5,'Curry Ducros 250ml', to_timestamp('31 Jan 2014', 'DD Mon YYYY'), 2.96, 5, 'Epices', 0, 'Nouveautes');
 --~cremerie&nouveaute
 INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (6,'ACTIVIA NATURE DANONE 4X125G', to_timestamp('12 Jun 2012', 'DD Mon YYYY'), 1.41, 20, 'Yaourts', 0, 'Frais libre service');
@@ -31,47 +34,47 @@ INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, bar
 INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (13,'COPPA ITALIENNE 73G', to_timestamp('11 Jun 2012', 'DD Mon YYYY'), 2.00, 40, 'Charcuterie tranchee', 0, 'Charcuterie');
 INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (14,'JAMBON DE BAYONNE 6 TRANCHES DELPEYRAT 100G', to_timestamp('21 Jul 2012', 'DD Mon YYYY'), 3.79, 50, 'Jambons', 0, 'Charcuterie');
 INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (15,'QUART DE JAMBON SEC 10 TRANCHES AUCHAN 250G ', to_timestamp('31 Jul 2012', 'DD Mon YYYY'), 4.41, 50, 'Jambons', 0, 'Charcuterie');
---~traiteur&nouveaute&bio
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (16,'SANDWICH JAMBON/EMMENTAL AUCHAN 145G', to_timestamp('01 Jul 2012', 'DD Mon YYYY'), 1.22, 20, 'Sandwiches snacks', 0, 'Charcuterie');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (17,'CHEESE BURGER X2 CHARAL 145G', to_timestamp('31 Jun 2012', 'DD Mon YYYY'), 5.21, 20, 'Sandwiches snacks', 0, 'Charcuterie');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (18,'COUSCOUS VIANDE 1KG', to_timestamp('11 Jun 2012', 'DD Mon YYYY'), 6.99, 20, 'Traiteur traditionnel', 0, 'Charcuterie');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (19,'TOMATES CONFITES 150G', to_timestamp('21 Jul 2012', 'DD Mon YYYY'), 2.49, 20, 'Traiteur traditionnel', 0, 'Charcuterie');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (20,'PIZZA CAPRICCIOSA AUCHAN 450 ', to_timestamp('31 Jul 2012', 'DD Mon YYYY'), 3.19, 20, 'Pizzas', 0, 'Charcuterie');
+--~Traiteur&nouveaute&bio
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (16,'SANDWICH JAMBON/EMMENTAL AUCHAN 145G', to_timestamp('01 Jul 2012', 'DD Mon YYYY'), 1.22, 20, 'Sandwiches snacks', 0, 'Traiteur');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (17,'CHEESE BURGER X2 CHARAL 145G', to_timestamp('31 Jun 2012', 'DD Mon YYYY'), 5.21, 20, 'Sandwiches snacks', 0, 'Traiteur');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (18,'COUSCOUS VIANDE 1KG', to_timestamp('11 Jun 2012', 'DD Mon YYYY'), 6.99, 20, 'Traiteur traditionnel', 0, 'Traiteur');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (19,'TOMATES CONFITES 150G', to_timestamp('21 Jul 2012', 'DD Mon YYYY'), 2.49, 20, 'Traiteur traditionnel', 0, 'Traiteur');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (20,'PIZZA CAPRICCIOSA AUCHAN 450 ', to_timestamp('31 Jul 2012', 'DD Mon YYYY'), 3.19, 20, 'Pizzas', 0, 'Traiteur');
 --~Surgeles&nouveaute
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (21,'STEACK HACHE 100% PUR BOEUF X10 AUCHAN 1KG', to_timestamp('23 Aug 2012', 'DD Mon YYYY'), 5.58, 30, 'viande hachee', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (22,'LE PUR BOEUF X10 CHARAL 1KG', to_timestamp('23 Aug 2012', 'DD Mon YYYY'), 8.17, 30, ' viande hachee', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (23,'MOULES DECORTIQUEES CUITES 400G', to_timestamp('23 Aug 2012', 'DD Mon YYYY'), 3.90, 30, 'poisson', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (24,'CREVETTES BLACK TIGER ENTIERES CRUES 400G', to_timestamp('23 Aug 2012', 'DD Mon YYYY'), 5.99, 30, 'poisson', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (25,'NOIX DE SAINT-JACQUES SANS CORAIL 300G', to_timestamp('23 Aug 2012', 'DD Mon YYYY'), 6.36, 30, 'poisson', 0, 'Entretien');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (21,'STEACK HACHE 100% PUR BOEUF X10 AUCHAN 1KG', to_timestamp('23 Aug 2012', 'DD Mon YYYY'), 5.58, 30, 'viande hachee', 0, 'Surgeles');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (22,'LE PUR BOEUF X10 CHARAL 1KG', to_timestamp('23 Aug 2012', 'DD Mon YYYY'), 8.17, 30, ' viande hachee', 0, 'Surgeles');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (23,'MOULES DECORTIQUEES CUITES 400G', to_timestamp('23 Aug 2012', 'DD Mon YYYY'), 3.90, 30, 'poisson', 0, 'Surgeles');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (24,'CREVETTES BLACK TIGER ENTIERES CRUES 400G', to_timestamp('23 Aug 2012', 'DD Mon YYYY'), 5.99, 30, 'poisson', 0, 'Surgeles');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (25,'NOIX DE SAINT-JACQUES SANS CORAIL 300G', to_timestamp('23 Aug 2012', 'DD Mon YYYY'), 6.36, 30, 'poisson', 0, 'Surgeles');
 --~Epicerie&bio
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (26,'PERSIL AUCHAN 10G ', to_timestamp('31 Jan 2014', 'DD Mon YYYY'), 1.05, 80, 'sauce condiment', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (27,'AIL SEMOULE AUCHAN 70G', to_timestamp('31 Jan 2014', 'DD Mon YYYY'), 0.76, 120, 'sauce condiment', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (28,'SOUPE POTIRON/CHATAIGNE LIEBIG 1L', to_timestamp('11 Jun 2012', 'DD Mon YYYY'), 3.04, 40, 'potages', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (29,'KETCHUP BIO TOP DOWN AUCHAN 282G', to_timestamp('11 Jun 2012', 'DD Mon YYYY'),1.74, 40, 'sauce condiment', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (30,'CONFIPOTE ABRICOTS MATERNE 350G', to_timestamp('31 Jul 2012', 'DD Mon YYYY'), 1.84, 60, 'confiture', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (31,'PATE A TARTINER NUTELLA 750G', to_timestamp('31 Jul 2012', 'DD Mon YYYY'), 3.99, 60, 'pate a tartiner', 0, 'Entretien');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (26,'PERSIL AUCHAN 10G ', to_timestamp('31 Jan 2014', 'DD Mon YYYY'), 1.05, 80, 'sauce condiment', 0, 'Epicerie');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (27,'AIL SEMOULE AUCHAN 70G', to_timestamp('31 Jan 2014', 'DD Mon YYYY'), 0.76, 120, 'sauce condiment', 0, 'Epicerie');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (28,'SOUPE POTIRON/CHATAIGNE LIEBIG 1L', to_timestamp('11 Jun 2012', 'DD Mon YYYY'), 3.04, 40, 'potages', 0, 'Epicerie');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (29,'KETCHUP BIO TOP DOWN AUCHAN 282G', to_timestamp('11 Jun 2012', 'DD Mon YYYY'),1.74, 40, 'sauce condiment', 0, 'Epicerie');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (30,'CONFIPOTE ABRICOTS MATERNE 350G', to_timestamp('31 Jul 2012', 'DD Mon YYYY'), 1.84, 60, 'confiture', 0, 'Epicerie');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (31,'PATE A TARTINER NUTELLA 750G', to_timestamp('31 Jul 2012', 'DD Mon YYYY'), 3.99, 60, 'pate a tartiner', 0, 'Epicerie');
 --~Boissons sans alcool&nouveaute&bio
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (32,'EAU MINERALE NATURELLE EVIAN 6X1L', to_timestamp('31 Jan 2014', 'DD Mon YYYY'), 2.94, 80, 'eaux plates', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (33,'EAU DE SOURCE CRISTALINE 1.5L', to_timestamp('31 Jan 2014', 'DD Mon YYYY'), 0.22, 120, 'eaux plates', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (34,'JUS DE RAISIN AUCHAN 1L', to_timestamp('11 Jun 2012', 'DD Mon YYYY'), 1.99, 40, 'jus de fruits frais', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (35,'JUS MULTIVITAMINE AUCHAN 1L', to_timestamp('11 Jun 2012', 'DD Mon YYYY'),2.27, 40, 'jus de fruits frais', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (36,'EAU MINERALE NATURELLE GAZEUSE BADOIT ROUGE 6X1L', to_timestamp('31 Jul 2012', 'DD Mon YYYY'), 4.08, 60, 'eaux gazeuzes', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (37,'JUS DE CAROTTE AUCHAN BIO 1L', to_timestamp('31 Jul 2012', 'DD Mon YYYY'), 2.41, 60, 'jus de fruits frais', 0, 'Entretien');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (32,'EAU MINERALE NATURELLE EVIAN 6X1L', to_timestamp('31 Jan 2014', 'DD Mon YYYY'), 2.94, 80, 'eaux plates', 0, 'Boissons sans alcool');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (33,'EAU DE SOURCE CRISTALINE 1.5L', to_timestamp('31 Jan 2014', 'DD Mon YYYY'), 0.22, 120, 'eaux plates', 0, 'Boissons sans alcool');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (34,'JUS DE RAISIN AUCHAN 1L', to_timestamp('11 Jun 2012', 'DD Mon YYYY'), 1.99, 40, 'jus de fruits frais', 0, 'Boissons sans alcool');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (35,'JUS MULTIVITAMINE AUCHAN 1L', to_timestamp('11 Jun 2012', 'DD Mon YYYY'),2.27, 40, 'jus de fruits frais', 0, 'Boissons sans alcool');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (36,'EAU MINERALE NATURELLE GAZEUSE BADOIT ROUGE 6X1L', to_timestamp('31 Jul 2012', 'DD Mon YYYY'), 4.08, 60, 'eaux gazeuzes', 0, 'Boissons sans alcool');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (37,'JUS DE CAROTTE AUCHAN BIO 1L', to_timestamp('31 Jul 2012', 'DD Mon YYYY'), 2.41, 60, 'jus de fruits frais', 0, 'Boissons sans alcool');
 --~Vins et Spiritueux&nouveaute
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (38,'WHISKY JAMESON 40% 70CL ', to_timestamp('31 Jan 2015', 'DD Mon YYYY'), 18.41, 30, 'whiskies bourbons', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (39,'BASE IRISH COFFEE .BAILEYS 17% 70CL', to_timestamp('31 Jan 2014', 'DD Mon YYYY'), 14.61, 30, 'whiskies bourbons', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (40,'GRAVES P.CHANAU 10 75CL', to_timestamp('11 Jun 2012', 'DD Mon YYYY'),4.29, 40, 'vin rouge', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (41,'BORDEAUX BLAISSAC 3L', to_timestamp('11 Jun 2012', 'DD Mon YYYY'),6.99, 40, 'vin rouge', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (42,'BORDEAUX BLAISSAC 1.5L', to_timestamp('11 Jun 2012', 'DD Mon YYYY'),13.29, 40, 'vin rouge', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (43,'BORDEAUX CHATEAU TALMONT 10 75CL', to_timestamp('31 Jul 2012', 'DD Mon YYYY'), 3.55, 60, 'vin rouge', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (44,'CHATEAU TALUSSON 11 75CL', to_timestamp('31 Jul 2012', 'DD Mon YYYY'), 3.25, 50, 'vin blanc', 0, 'Entretien');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (38,'WHISKY JAMESON 40% 70CL ', to_timestamp('31 Jan 2015', 'DD Mon YYYY'), 18.41, 30, 'whiskies bourbons', 0, 'Vins et Spiritueux');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (39,'BASE IRISH COFFEE .BAILEYS 17% 70CL', to_timestamp('31 Jan 2014', 'DD Mon YYYY'), 14.61, 30, 'whiskies bourbons', 0, 'Vins et Spiritueux');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (40,'GRAVES P.CHANAU 10 75CL', to_timestamp('11 Jun 2012', 'DD Mon YYYY'),4.29, 40, 'vin rouge', 0, 'Vins et Spiritueux');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (41,'BORDEAUX BLAISSAC 3L', to_timestamp('11 Jun 2012', 'DD Mon YYYY'),6.99, 40, 'vin rouge', 0, 'Vins et Spiritueux');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (42,'BORDEAUX BLAISSAC 1.5L', to_timestamp('11 Jun 2012', 'DD Mon YYYY'),13.29, 40, 'vin rouge', 0, 'Vins et Spiritueux');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (43,'BORDEAUX CHATEAU TALMONT 10 75CL', to_timestamp('31 Jul 2012', 'DD Mon YYYY'), 3.55, 60, 'vin rouge', 0, 'Vins et Spiritueux');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (44,'CHATEAU TALUSSON 11 75CL', to_timestamp('31 Jul 2012', 'DD Mon YYYY'), 3.25, 50, 'vin blanc', 0, 'Vins et Spiritueux');
 --~Hygiene parfumerie&nouveaute
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (45,'DENTIFRICE HALEINE PURE SIGNAL 75ML', to_timestamp('31 Jan 2015', 'DD Mon YYYY'), 1.93, 100, 'soins dentaires', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (46,'BROSSE A DENTS EXTRA CLEAN MEDIUM X4 COLGATE', to_timestamp('31 Jan 2016', 'DD Mon YYYY'), 3.01, 100, 'soins dentaires', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (47,'GEL DOUCHE LAIT ET VANILLE AUCHAN 300ML', to_timestamp('31 Jun 2016', 'DD Mon YYYY'), 1.61, 50, 'la toilette', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (48,'SAVON LAVANDE LE PETIT OLIVIER 250G', to_timestamp('31 Jan 2016', 'DD Mon YYYY'), 2.46, 80, 'la toilette', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (49,'ESSUIE TOUT DECOREE AUCHAN X3', to_timestamp('31 Jan 2015', 'DD Mon YYYY'), 2.93, 100, 'essuie', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (50,'ESSUIE TOUT DECORE X3 AUCHAN', to_timestamp('31 Jan 2015', 'DD Mon YYYY'), 3.65, 100, 'essuie', 0, 'Entretien');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (45,'DENTIFRICE HALEINE PURE SIGNAL 75ML', to_timestamp('31 Jan 2015', 'DD Mon YYYY'), 1.93, 100, 'soins dentaires', 0, 'Hygiene parfumerie');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (46,'BROSSE A DENTS EXTRA CLEAN MEDIUM X4 COLGATE', to_timestamp('31 Jan 2016', 'DD Mon YYYY'), 3.01, 100, 'soins dentaires', 0, 'Hygiene parfumerie');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (47,'GEL DOUCHE LAIT ET VANILLE AUCHAN 300ML', to_timestamp('31 Jun 2016', 'DD Mon YYYY'), 1.61, 50, 'la toilette', 0, 'Hygiene parfumerie');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (48,'SAVON LAVANDE LE PETIT OLIVIER 250G', to_timestamp('31 Jan 2016', 'DD Mon YYYY'), 2.46, 80, 'la toilette', 0, 'Hygiene parfumerie');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (49,'ESSUIE TOUT DECOREE AUCHAN X3', to_timestamp('31 Jan 2015', 'DD Mon YYYY'), 2.93, 100, 'essuie', 0, 'Hygiene parfumerie');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (50,'ESSUIE TOUT DECORE X3 AUCHAN', to_timestamp('31 Jan 2015', 'DD Mon YYYY'), 3.65, 100, 'essuie', 0, 'Hygiene parfumerie');
 --~Entretien&nouveaute&bio
 INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (51,'PASTILLES LAVE VAISSELLE X45', to_timestamp('31 Jan 2016', 'DD Mon YYYY'), 4.59, 60, 'produits vaisselle', 0, 'Entretien');
 INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (52,'RENOV LAVE VAISSELLE AUCHAN 250ML', to_timestamp('31 Jan 2015', 'DD Mon YYYY'), 2.86, 30, 'produits vaisselle', 0, 'Entretien');
@@ -79,32 +82,32 @@ INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, bar
 INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (54,'ENSEMBLE PELLE BALAYETTE', to_timestamp('01 Jun 2015', 'DD Mon YYYY'), 2.09, 10, 'brosserie', 0, 'Entretien');
 INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (55,'FRANGES COTON 100G', to_timestamp('31 Jan 2015', 'DD Mon YYYY'), 1.20, 10, 'brosserie', 0, 'Entretien');
 INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (56,'NETTOYANT VITRE RECHARGE AUCHAN 500ML', to_timestamp('19 Jun 2012', 'DD Mon YYYY'), 1.14, 10, 'nettoyants menagers', 0, 'Entretien');
---~maison&nouveaute
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (57,'AMPOULE ECOCLASSIC 42W PHILIPS', to_timestamp('31 Jan 2017', 'DD Mon YYYY'), 3.50, 10, 'electriceite', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (58,'LINOLITE 310X38 OPALE 60W S19', to_timestamp('31 Jan 2017', 'DD Mon YYYY'), 4.34, 10, 'electriceite', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (59,'CARAFE MARELLA COOL BLANC BRITA', to_timestamp('31 Jan 2017', 'DD Mon YYYY'), 22.10, 10, 'accessoires de cuisine', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (60,'LOT 3 USTENSILES DE CUISINE EN BOIS', to_timestamp('31 Jan 2017', 'DD Mon YYYY'), 2.69, 10, 'accessoires de cuisine', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (61,'PETITES CUILLERES X24 TRANSPARENTES AUCHAN', to_timestamp('31 Jan 2017', 'DD Mon YYYY'), 2.09, 10, 'art de la table', 0, 'Entretien');
+--~Maison&nouveaute
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (57,'AMPOULE ECOCLASSIC 42W PHILIPS', to_timestamp('31 Jan 2017', 'DD Mon YYYY'), 3.50, 10, 'electriceite', 0, 'Maison');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (58,'LINOLITE 310X38 OPALE 60W S19', to_timestamp('31 Jan 2017', 'DD Mon YYYY'), 4.34, 10, 'electriceite', 0, 'Maison');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (59,'CARAFE MARELLA COOL BLANC BRITA', to_timestamp('31 Jan 2017', 'DD Mon YYYY'), 22.10, 10, 'accessoires de cuisine', 0, 'Maison');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (60,'LOT 3 USTENSILES DE CUISINE EN BOIS', to_timestamp('31 Jan 2017', 'DD Mon YYYY'), 2.69, 10, 'accessoires de cuisine', 0, 'Maison');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (61,'PETITES CUILLERES X24 TRANSPARENTES AUCHAN', to_timestamp('31 Jan 2017', 'DD Mon YYYY'), 2.09, 10, 'art de la table', 0, 'Maison');
 --~Produit BIO et ecologique
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (62,'COURGETTE BIO 1KG', to_timestamp('19 Jun 2012', 'DD Mon YYYY'), 2.95, 10, 'fruits et legumes', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (63,'POIVRON PANACHE BIO 250G', to_timestamp('19 Jun 2012', 'DD Mon YYYY'), 2.59, 10, 'fruits et legumes', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (64,'ACTIVIA NATURE DANONE 4X125G', to_timestamp('12 Jun 2012', 'DD Mon YYYY'), 1.41, 20, 'Yaourts', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (65,'LE PUR BOEUF X10 CHARAL 1KG', to_timestamp('23 Aug 2012', 'DD Mon YYYY'), 8.17, 30, ' viande hachee', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (66,'SANDWICH JAMBON/EMMENTAL AUCHAN 145G', to_timestamp('01 Jul 2012', 'DD Mon YYYY'), 1.22, 20, 'Sandwiches snacks', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (67,'JUS DE CAROTTE AUCHAN BIO 1L', to_timestamp('31 Jul 2012', 'DD Mon YYYY'), 2.41, 60, 'jus de fruits frais', 0, 'Entretien');
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (68,'NETTOYANT VITRE RECHARGE AUCHAN 500ML', to_timestamp('19 Jun 2012', 'DD Mon YYYY'), 1.14, 10, 'nettoyants menagers', 0, 'Entretien');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (62,'COURGETTE BIO 1KG', to_timestamp('19 Jun 2012', 'DD Mon YYYY'), 2.95, 10, 'fruits et legumes', 0, 'Produit BIO et ecologique');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (63,'POIVRON PANACHE BIO 250G', to_timestamp('19 Jun 2012', 'DD Mon YYYY'), 2.59, 10, 'fruits et legumes', 0, 'Produit BIO et ecologique');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (64,'ACTIVIA NATURE DANONE 4X125G', to_timestamp('12 Jun 2012', 'DD Mon YYYY'), 1.41, 20, 'Yaourts', 0, 'Produit BIO et ecologique');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (65,'LE PUR BOEUF X10 CHARAL 1KG', to_timestamp('23 Aug 2012', 'DD Mon YYYY'), 8.17, 30, ' viande hachee', 0, 'Produit BIO et ecologique');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (66,'SANDWICH JAMBON/EMMENTAL AUCHAN 145G', to_timestamp('01 Jul 2012', 'DD Mon YYYY'), 1.22, 20, 'Sandwiches snacks', 0, 'Produit BIO et ecologique');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (67,'JUS DE CAROTTE AUCHAN BIO 1L', to_timestamp('31 Jul 2012', 'DD Mon YYYY'), 2.41, 60, 'jus de fruits frais', 0, 'Produit BIO et ecologique');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (68,'NETTOYANT VITRE RECHARGE AUCHAN 500ML', to_timestamp('19 Jun 2012', 'DD Mon YYYY'), 1.14, 10, 'nettoyants menagers', 0, 'Produit BIO et ecologique');
 
-INSERT INTO tAssociation (id, theme) VALUES (1, 'Frais libre service');
-INSERT INTO tAssociation (id, theme) VALUES (2, 'Epicerie');
-INSERT INTO tAssociation (id, theme) VALUES (3, 'Liquides');
-INSERT INTO tAssociation (id, theme) VALUES (4, 'Frais libre service');
-INSERT INTO tAssociation (id, theme) VALUES (5, 'Epicerie');
+INSERT INTO tAssociation (id, theme) VALUES (1, 'Nouveautes');
+INSERT INTO tAssociation (id, theme) VALUES (2, 'Nouveautes');
+INSERT INTO tAssociation (id, theme) VALUES (3, 'Nouveautes');
+INSERT INTO tAssociation (id, theme) VALUES (4, 'Nouveautes');
+INSERT INTO tAssociation (id, theme) VALUES (5, 'Nouveautes');
 
-INSERT INTO tAssociation (id, theme) VALUES (6, 'Cremerie');
-INSERT INTO tAssociation (id, theme) VALUES (7, 'Cremerie');
-INSERT INTO tAssociation (id, theme) VALUES (8, 'Cremerie');
-INSERT INTO tAssociation (id, theme) VALUES (9, 'Cremerie');
-INSERT INTO tAssociation (id, theme) VALUES (10,'Cremerie');
+INSERT INTO tAssociation (id, theme) VALUES (6, 'Frais libre service');
+INSERT INTO tAssociation (id, theme) VALUES (7, 'Frais libre service');
+INSERT INTO tAssociation (id, theme) VALUES (8, 'Frais libre service');
+INSERT INTO tAssociation (id, theme) VALUES (9, 'Frais libre service');
+INSERT INTO tAssociation (id, theme) VALUES (10,'Frais libre service');
 
 INSERT INTO tAssociation (id, theme) VALUES (11, 'Charcuterie');
 INSERT INTO tAssociation (id, theme) VALUES (12, 'Charcuterie');
@@ -158,26 +161,30 @@ INSERT INTO tAssociation (id, theme) VALUES (52,'Entretien');
 INSERT INTO tAssociation (id, theme) VALUES (53,'Entretien');
 INSERT INTO tAssociation (id, theme) VALUES (54,'Entretien');
 INSERT INTO tAssociation (id, theme) VALUES (55,'Entretien');
-INSERT INTO tAssociation (id, theme) VALUES (57,'Entretien');
+INSERT INTO tAssociation (id, theme) VALUES (56,'Entretien');
 
-INSERT INTO tAssociation (id, theme) VALUES  (58,'maison');
-INSERT INTO tAssociation (id, theme) VALUES  (59,'maison');
-INSERT INTO tAssociation (id, theme) VALUES  (60,'maison');
-INSERT INTO tAssociation (id, theme) VALUES  (61,'maison');
+INSERT INTO tAssociation (id, theme) VALUES  (57,'Maison');
+INSERT INTO tAssociation (id, theme) VALUES  (58,'Maison');
+INSERT INTO tAssociation (id, theme) VALUES  (59,'Maison');
+INSERT INTO tAssociation (id, theme) VALUES  (60,'Maison');
+INSERT INTO tAssociation (id, theme) VALUES  (61,'Maison');
 
+INSERT INTO tAssociation (id, theme) VALUES  (62,'Produit BIO et ecologique');
+INSERT INTO tAssociation (id, theme) VALUES  (63,'Produit BIO et ecologique');
 INSERT INTO tAssociation (id, theme) VALUES  (64,'Produit BIO et ecologique');
 INSERT INTO tAssociation (id, theme) VALUES  (65,'Produit BIO et ecologique');
 INSERT INTO tAssociation (id, theme) VALUES  (66,'Produit BIO et ecologique');
 INSERT INTO tAssociation (id, theme) VALUES  (67,'Produit BIO et ecologique');
+INSERT INTO tAssociation (id, theme) VALUES  (68,'Produit BIO et ecologique');
 
 
 
-INSERT INTO tClient (login, mdp, nom, prenom, adresse, age, pointFidelite) VALUES ('Florian', 'azerty', 'Dambrine', 'Florian', '18 r¨¦sidence Jean Audegond 80470 Ailly/Sur/Somme', 21, 514);
-INSERT INTO tClient (login, mdp, nom, prenom, adresse, age, pointFidelite) VALUES ('Tudor', 'azerty', 'Luchiancenco', 'Tudor', '5 rue Pierre Sauvage 60200 Compi¨¨gne', 21, 245);
-INSERT INTO tClient (login, mdp, nom, prenom, adresse, age, pointFidelite) VALUES ('Pierre', 'azerty', 'Fayolle', 'Pierre', '10 rue Leon Blum 60200 Compi¨¨gne', 21, 33);
-INSERT INTO tClient (login, mdp, nom, prenom, adresse, age, pointFidelite) VALUES ('Qifan', 'azerty', 'Zheng', 'Qifan', '92 rue Pierre Guillaumat 60200 Compi¨¨gne', 20, 0);
-INSERT INTO tClient (login, mdp, nom, prenom, adresse, age, pointFidelite) VALUES ('Mickael', 'azerty', 'Mickael', 'Macquet', '3bis rue Cl¨¦ment Bayard 60200 Compi¨¨gne', 22, 1048);
-INSERT INTO tClient (login, mdp, nom, prenom, adresse, age, pointFidelite) VALUES ('Olivia', 'azerty', 'Olivia', 'Reaney', '114 avenue de la Marne 60200 Compi¨¨gne', 23, 687);
+INSERT INTO tClient (login, mdp, nom, prenom, adresse, age, pointFidelite) VALUES ('Florian', 'azerty', 'Dambrine', 'Florian', '18 residence Jean Audegond 80470 Ailly Sur Somme', 21, 514);
+INSERT INTO tClient (login, mdp, nom, prenom, adresse, age, pointFidelite) VALUES ('Tudor', 'azerty', 'Luchiancenco', 'Tudor', '5 rue Pierre Sauvage 60200 Compiegne', 21, 245);
+INSERT INTO tClient (login, mdp, nom, prenom, adresse, age, pointFidelite) VALUES ('Pierre', 'azerty', 'Fayolle', 'Pierre', '10 rue Leon Blum 60200 Compiegne', 21, 33);
+INSERT INTO tClient (login, mdp, nom, prenom, adresse, age, pointFidelite) VALUES ('Qifan', 'azerty', 'Zheng', 'Qifan', '92 rue Pierre Guillaumat 60200 Compiegne', 20, 0);
+INSERT INTO tClient (login, mdp, nom, prenom, adresse, age, pointFidelite) VALUES ('Mickael', 'azerty', 'Mickael', 'Macquet', '3bis rue Clement Bayard 60200 Compiegne', 22, 1048);
+INSERT INTO tClient (login, mdp, nom, prenom, adresse, age, pointFidelite) VALUES ('Olivia', 'azerty', 'Olivia', 'Reaney', '114 avenue de la Marne 60200 Compiegne', 23, 687);
 INSERT INTO tClient (login, mdp, nom, prenom, adresse, age, pointFidelite) VALUES ('Vanessa', 'azerty', 'Vanessa', 'Wolinne', '22 rue de Vignacourt 80420 Flixecourt', 22, 15);
 
 INSERT INTO tPanier (id, datePanier, login) VALUES (1, to_timestamp('12 May 2012', 'DD Mon YYYY'), 'Florian');
@@ -186,24 +193,15 @@ INSERT INTO tPanier (id, datePanier, login) VALUES (3, to_timestamp('26 Apr 2012
 INSERT INTO tPanier (id, datePanier, login) VALUES (4, to_timestamp('21 Apr 2012', 'DD Mon YYYY'), 'Tudor');
 INSERT INTO tPanier (id, datePanier, login) VALUES (5, to_timestamp('11 Apr 2012', 'DD Mon YYYY'), 'Tudor');
 INSERT INTO tPanier (id, datePanier, login) VALUES (6, to_timestamp('08 Apr 2012', 'DD Mon YYYY'), 'Tudor');
-INSERT INTO tPanier (id, datePanier, login) VALUES (7, to_timestamp('26 Mai 2012', 'DD Mon YYYY'), 'Pierre');
-INSERT INTO tPanier (id, datePanier, login) VALUES (8, to_timestamp('06 Mai 2012', 'DD Mon YYYY'), 'Pierre');
+INSERT INTO tPanier (id, datePanier, login) VALUES (7, to_timestamp('26 May 2012', 'DD Mon YYYY'), 'Pierre');
+INSERT INTO tPanier (id, datePanier, login) VALUES (8, to_timestamp('06 May 2012', 'DD Mon YYYY'), 'Pierre');
 INSERT INTO tPanier (id, datePanier, login) VALUES (9, to_timestamp('17 Mar 2012', 'DD Mon YYYY'), 'Pierre');
-INSERT INTO tPanier (id, datePanier, login) VALUES (10, to_timestamp('23 Mai 2012', 'DD Mon YYYY'), 'Qifan');
+INSERT INTO tPanier (id, datePanier, login) VALUES (10, to_timestamp('23 May 2012', 'DD Mon YYYY'), 'Qifan');
 INSERT INTO tPanier (id, datePanier, login) VALUES (11, to_timestamp('09 Mar 2012', 'DD Mon YYYY'), 'Qifan');
-INSERT INTO tPanier (id, datePanier, login) VALUES (12, to_timestamp('27 Fer 2012', 'DD Mon YYYY'), 'Mickael');
-INSERT INTO tPanier (id, datePanier, login) VALUES (13, to_timestamp('8 Fer 2012', 'DD Mon YYYY'), 'Olivia');
+INSERT INTO tPanier (id, datePanier, login) VALUES (12, to_timestamp('27 Feb 2012', 'DD Mon YYYY'), 'Mickael');
+INSERT INTO tPanier (id, datePanier, login) VALUES (13, to_timestamp('8 Feb 2012', 'DD Mon YYYY'), 'Olivia');
 
 
---~CREATE TABLE IF NOT EXISTS tContient(
-	--~ idProduit INT NOT NULL,
-	--~ idPanier INT NOT NULL,
-	--~ quantite INT,
-	--~ prixPublicUnitaire FLOAT, 
-	--~ FOREIGN KEY (idProduit) REFERENCES tProduit (id),
-	--~ FOREIGN KEY (idPanier) REFERENCES tPanier (id),
-	--~ PRIMARY KEY (idProduit, idPanier) -- Cl¨¦ binaire
---~ );
 INSERT INTO tContient (idProduit, idPanier, quantite,prixPublicUnitaire) values (5,1,3,2.96);
 INSERT INTO tContient (idProduit, idPanier, quantite,prixPublicUnitaire) values (15,1,3,4.41);
 INSERT INTO tContient (idProduit, idPanier, quantite,prixPublicUnitaire) values (25,1,1,6.36);
@@ -260,24 +258,12 @@ INSERT INTO tContient (idProduit, idPanier, quantite,prixPublicUnitaire) values 
 INSERT INTO tContient (idProduit, idPanier, quantite,prixPublicUnitaire) values (42,12,3,6.99);
 
 
---~ CREATE TABLE IF NOT EXISTS tResponsableLivraison(
-	--~ login VARCHAR(50) PRIMARY KEY,
-	--~ mdp VARCHAR(50) NOT NULL
---~ );
-INSERT INTO tResponsableLivraison(login,mdp) VALUES ('Simon','Ladmin');
 INSERT INTO tResponsableLivraison(login,mdp) VALUES ('Laurent','Ladmin');
+INSERT INTO tResponsableLivraison(login,mdp) VALUES ('Antoine','Ladmin');
 
---~ CREATE TABLE IF NOT EXISTS tResponsableCatalogue(
-	--~ login VARCHAR(50) PRIMARY KEY,
-	--~ mdp VARCHAR(50) NOT NULL
---~ );
 INSERT INTO tResponsableCatalogue(login,mdp) VALUES ('Michel','Cadmin');
 INSERT INTO tResponsableCatalogue(login,mdp) VALUES ('David','Cadmin');
 
---~ CREATE TABLE IF NOT EXISTS tLivreur(
-	--~ login VARCHAR(50) PRIMARY KEY,
-	--~ mdp VARCHAR(50) NOT NULL
---~ );
 INSERT INTO tLivreur(login,mdp) VALUES ('Legrand','Livreur');
 INSERT INTO tLivreur(login,mdp) VALUES ('Robin','Livreur');
 INSERT INTO tLivreur(login,mdp) VALUES ('Chevalier','Livreur');
@@ -287,18 +273,10 @@ INSERT INTO tLivreur(login,mdp) VALUES ('Dumont','Livreur');
 INSERT INTO tLivreur(login,mdp) VALUES ('Gauthier','Livreur');
 INSERT INTO tLivreur(login,mdp) VALUES ('Clement','Livreur');
 
---~ CREATE TABLE IF NOT EXISTS tResponsableMarketing(
-	--~ login VARCHAR(50) PRIMARY KEY,
-	--~ mdp VARCHAR(50) NOT NULL,
-	--~ baremePoint FLOAT???????
---~ );
 INSERT INTO tResponsableMarketing(login,mdp,baremePoint) VALUES ('Thomas','Madmin',50.0);
 INSERT INTO tResponsableMarketing(login,mdp,baremePoint) VALUES ('Moreau','Madmin',50.0);
 
---~ CREATE TABLE IF NOT EXISTS tTournee(
-	--~ id INT PRIMARY KEY, -- CHECK (id IN tLivreur), Contrainte impossible
-	--~ dateTournee TIMESTAMP NOT NULL????????????????????
---~ );
+
 INSERT INTO tTournee(id,dateTournee) VALUES (1, to_timestamp('12 May 2012 00:30:00', 'DD Mon YYYY HH24:MI:SS '));
 INSERT INTO tTournee(id,dateTournee) VALUES (2, to_timestamp('12 May 2012 00:30:00', 'DD Mon YYYY HH24:MI:SS '));
 INSERT INTO tTournee(id,dateTournee) VALUES (3, to_timestamp('12 May 2012 00:30:00', 'DD Mon YYYY HH24:MI:SS '));
@@ -308,43 +286,23 @@ INSERT INTO tTournee(id,dateTournee) VALUES (6, to_timestamp('12 May 2012 00:30:
 INSERT INTO tTournee(id,dateTournee) VALUES (7, to_timestamp('12 May 2012 00:30:00', 'DD Mon YYYY HH24:MI:SS '));
 
 
---~ CREATE TABLE IF NOT EXISTS tRealise(
-	--~ idTournee INT NOT NULL,
-	--~ idLivreur VARCHAR(50) NOT NULL,
-	--~ FOREIGN KEY (idTournee) REFERENCES tTournee (id),
-	--~ FOREIGN KEY (idLivreur) REFERENCES tLivreur (login),
-	--~ PRIMARY KEY (idTournee, idLivreur)
---~ );
-
-INSERT INTO tRealise(idTournee,idLivreur,) VALUES (1, 'Legrand');
-INSERT INTO tRealise(idTournee,idLivreur,) VALUES (2, 'Chevalier');
-INSERT INTO tRealise(idTournee,idLivreur,) VALUES (3, 'Fontaine');
-INSERT INTO tRealise(idTournee,idLivreur,) VALUES (4, 'Dumont');
-INSERT INTO tRealise(idTournee,idLivreur,) VALUES (5, 'Dumont');
-INSERT INTO tRealise(idTournee,idLivreur,) VALUES (6, 'Clement');
-INSERT INTO tRealise(idTournee,idLivreur,) VALUES (7, 'Clement');
-
---~ CREATE TABLE IF NOT EXISTS tCommande(
-	--~ idPanier INT PRIMARY KEY,
-	--~ dateValidation TIMESTAMP NOT NULL,
-	--~ etat eEtat NOT NULL,
-	--~ heureLivraison INT NOT NULL,
-	--~ lieuLivraison VARCHAR(200) NOT NULL,
-	--~ idTournee INT,
-	--~ FOREIGN KEY (idPanier) REFERENCES tPanier (id),
-	--~ FOREIGN KEY (idTournee) REFERENCES tTournee (id)
---~ );
-
-INSERT INTO tCommande(idPanier,dateValidation,etat,heureLivraison,lieuLivraison,idTournee) VALUES (1, to_timestamp('12 May 2012 12:30:00', 'DD Mon YYYY HH24:MI:SS '),'en pr¨¦paration',14,'18 r¨¦sidence Jean Audegond 80470 Ailly/Sur/Somme',1);
-INSERT INTO tCommande(idPanier,dateValidation,etat,heureLivraison,lieuLivraison,idTournee) VALUES (2, to_timestamp('12 May 2012 12:30:06', 'DD Mon YYYY HH24:MI:SS '),'en pr¨¦paration',14,'18 r¨¦sidence Jean Audegond 80470 Ailly/Sur/Somme',2);
-INSERT INTO tCommande(idPanier,dateValidation,etat,heureLivraison,lieuLivraison,idTournee) VALUES (4, to_timestamp('12 May 2012 01:30:00', 'DD Mon YYYY HH24:MI:SS '),'en pr¨¦paration',14,'5 rue Pierre Sauvage 60200 Compi¨¨gne',2);
-INSERT INTO tCommande(idPanier,dateValidation,etat,heureLivraison,lieuLivraison,idTournee) VALUES (7, to_timestamp('12 May 2012 15:30:00', 'DD Mon YYYY HH24:MI:SS '),'en pr¨¦paration',14,'10 rue Leon Blum 60200 Compi¨¨gne',3);
-INSERT INTO tCommande(idPanier,dateValidation,etat,heureLivraison,lieuLivraison,idTournee) VALUES (8, to_timestamp('12 May 2012 22:30:00', 'DD Mon YYYY HH24:MI:SS '),'en pr¨¦paration',14,'10 rue Leon Blum 60200 Compi¨¨gne',3);
-INSERT INTO tCommande(idPanier,dateValidation,etat,heureLivraison,lieuLivraison,idTournee) VALUES (10, to_timestamp('12 May 2012 19:30:00', 'DD Mon YYYY HH24:MI:SS '),'en pr¨¦paration',14,'92 rue Pierre Guillaumat 60200 Compi¨¨gne',3);
-INSERT INTO tCommande(idPanier,dateValidation,etat,heureLivraison,lieuLivraison,idTournee) VALUES (11, to_timestamp('12 May 2012 10:00:00', 'DD Mon YYYY HH24:MI:SS '),'en pr¨¦paration',14,'92 rue Pierre Guillaumat 60200 Compi¨¨gne',4);
-INSERT INTO tCommande(idPanier,dateValidation,etat,heureLivraison,lieuLivraison,idTournee) VALUES (12, to_timestamp('12 May 2012 23:30:00', 'DD Mon YYYY HH24:MI:SS '),'en pr¨¦paration',14,'3bis rue Cl¨¦ment Bayard 60200 Compi¨¨gne',1);
+INSERT INTO tRealise(idTournee,idLivreur) VALUES (1, 'Legrand');
+INSERT INTO tRealise(idTournee,idLivreur) VALUES (2, 'Chevalier');
+INSERT INTO tRealise(idTournee,idLivreur) VALUES (3, 'Fontaine');
+INSERT INTO tRealise(idTournee,idLivreur) VALUES (4, 'Dumont');
+INSERT INTO tRealise(idTournee,idLivreur) VALUES (5, 'Dumont');
+INSERT INTO tRealise(idTournee,idLivreur) VALUES (6, 'Clement');
+INSERT INTO tRealise(idTournee,idLivreur) VALUES (7, 'Clement');
 
 
+INSERT INTO tCommande(idPanier,dateValidation,etatCmd,heureLivraison,lieuLivraison,idTournee) VALUES (1, to_timestamp('12 May 2012 12:30:00', 'DD Mon YYYY HH24:MI:SS '),'en preparation',to_timestamp('14:30:00', 'HH24:MI:SS'),'18 residence Jean Audegond 80470 Ailly/Sur/Somme',1);
+INSERT INTO tCommande(idPanier,dateValidation,etatCmd,heureLivraison,lieuLivraison,idTournee) VALUES (2, to_timestamp('12 May 2012 12:30:06', 'DD Mon YYYY HH24:MI:SS '),'en preparation',to_timestamp('14:30:00', 'HH24:MI:SS'),'18 residence Jean Audegond 80470 Ailly/Sur/Somme',2);
+INSERT INTO tCommande(idPanier,dateValidation,etatCmd,heureLivraison,lieuLivraison,idTournee) VALUES (4, to_timestamp('12 May 2012 01:30:00', 'DD Mon YYYY HH24:MI:SS '),'en preparation',to_timestamp('14:30:00', 'HH24:MI:SS'),'5 rue Pierre Sauvage 60200 Compiegne',2);
+INSERT INTO tCommande(idPanier,dateValidation,etatCmd,heureLivraison,lieuLivraison,idTournee) VALUES (7, to_timestamp('12 May 2012 15:30:00', 'DD Mon YYYY HH24:MI:SS '),'en preparation',to_timestamp('14:30:00', 'HH24:MI:SS'),'10 rue Leon Blum 60200 Compiegne',3);
+INSERT INTO tCommande(idPanier,dateValidation,etatCmd,heureLivraison,lieuLivraison,idTournee) VALUES (8, to_timestamp('12 May 2012 22:30:00', 'DD Mon YYYY HH24:MI:SS '),'en preparation',to_timestamp('14:30:00', 'HH24:MI:SS'),'10 rue Leon Blum 60200 Compiegne',3);
+INSERT INTO tCommande(idPanier,dateValidation,etatCmd,heureLivraison,lieuLivraison,idTournee) VALUES (10, to_timestamp('12 May 2012 19:30:00', 'DD Mon YYYY HH24:MI:SS '),'en preparation',to_timestamp('14:30:00', 'HH24:MI:SS'),'92 rue Pierre Guillaumat 60200 Compiegne',3);
+INSERT INTO tCommande(idPanier,dateValidation,etatCmd,heureLivraison,lieuLivraison,idTournee) VALUES (11, to_timestamp('12 May 2012 10:00:00', 'DD Mon YYYY HH24:MI:SS '),'en preparation',to_timestamp('14:30:00', 'HH24:MI:SS'),'92 rue Pierre Guillaumat 60200 Compiegne',4);
+INSERT INTO tCommande(idPanier,dateValidation,etatCmd,heureLivraison,lieuLivraison,idTournee) VALUES (12, to_timestamp('12 May 2012 23:30:00', 'DD Mon YYYY HH24:MI:SS '),'en preparation',to_timestamp('14:30:00', 'HH24:MI:SS'),'3bis rue Clement Bayard 60200 Compiegne',1);
 
 
 

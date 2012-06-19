@@ -4,7 +4,7 @@ Class Client {
 	//Attributs
 	
 	//Méthodes statiques
-    static public function Connection($login, $pass) {
+    public static function Connection($login, $pass) {
 		// table tclient
 		$sql = "select login, mdp from tclient where $login = login and $pass = mdp";
 		$res = DB::Sql($sql);
@@ -17,6 +17,7 @@ Class Client {
 			return false;
 		}	
 	}
+	
 	
 	//Méthodes de classe publiques
 	public function Enregistrer(){
@@ -41,7 +42,7 @@ Class Client {
 
 	function Modifier(){
 		$sql="UPDATE ... SET ...
-			WHERE ...='{$this->...}'";
+			WHERE ...=''";
 		$res=DB::Sql($sql);	
 	}		
 };

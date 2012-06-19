@@ -1,5 +1,5 @@
 <?php
-
+$_SESSION['Panier']="ok";
 Header::set_title("Module: Rayon");
 
 include(CLASSES."Rayon.class.php");

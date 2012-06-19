@@ -72,6 +72,31 @@ Class Rayon {
 		return $fres;
 	}
 	
+	static public function ListerParRayonVisiteur(){
+		$rayons=self::Lister();
+		$fres=array();
+			
+		foreach($rayons as $rayon => $r){
+			
+			$sql="SELECT * FROM vproduitclient WHERE idRayon='{$r->theme}'";
+			$tab=DB::SqlToArray($sql);
+			$res=array();
+			
+			foreach($tab as $t){
+				$p=new Produit();
+				$p->Creer($t['nom'], $t['dateperemption'], $t['prix'], NULL, $t['categorie'], $t['baremepromo'], $t['idrayon'], $t['id']);
+				
+				//Gére la date
+				$e1=explode(" ",$p->datePeremption);
+				$e2=explode("-",$e1[0]);
+				$p->datePeremption=$e2[2]."/".$e2[1]."/".$e2[0];
+				$res[]=$p;
+			}
+			$fres[$r->theme]=$res;
+		}
+		
+		return $fres;
+	}
 
 	//Méthodes de classe privées	
 	function Inserer(){	
