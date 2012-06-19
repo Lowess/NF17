@@ -10,10 +10,9 @@
 			foreach($tab as $t){
 				echo"<tr>";
 				echo"<td>$t->theme</td>";
-				echo"<td><a href='?module=Rayon&action=ajout'><img src='template/addfile.png'/></a></td>";
-				echo"<td><a href='?module=Rayon&action=supprimer&id={$t->theme}'><img src='template/delete.png'/></a></td>";
-				echo"</tr>";
-				
+				echo"<td><a href='?module=Rayon&action=ajout'><img src='template/addfile.png' title='Ajouter un nouveau Rayon'/></a></td>";
+				echo"<td><a href='?module=Rayon&action=supprimer&id={$t->theme}'><img src='template/delete.png' title='Supprimer ce Rayon'/></a></td>";
+				echo"</tr>";			
 			}
 		?>
 	</table>

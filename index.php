@@ -52,6 +52,8 @@ Controller::load_content();
 				Ceci est l'accès aux différents modules<br />
 				<a href="?module=Rayon">Rayon</a>
 				<a href="?module=Produit">Produits</a>
+				<a href="?module=Livreur">Livreur</a>
+				<a href="?module=Commande">Commande</a>
 				<a href="">Pannier</a>
 			</div>
 		</div>

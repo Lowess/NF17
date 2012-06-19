@@ -58,6 +58,7 @@ CREATE TABLE IF NOT EXISTS tProduit(
 	idRayon VARCHAR(200) NOT NULL,
 	FOREIGN KEY (idRayon) REFERENCES tRayon (theme)
 );
+
 CREATE SEQUENCE seq_tProduit;
 
 CREATE TABLE IF NOT EXISTS tAssociation(
@@ -84,6 +85,7 @@ CREATE TABLE IF NOT EXISTS tPanier(
 	login VARCHAR(50),
 	FOREIGN KEY (login) REFERENCES tClient (login)
 );
+CREATE SEQUENCE seq_tPannier;
 
 CREATE TABLE IF NOT EXISTS tContient(
 	idProduit INT NOT NULL,
@@ -131,7 +133,7 @@ CREATE TABLE IF NOT EXISTS tRealise(
 
 -- Création d'un type ENUM pour tCommande.etat
 
-CREATE TYPE eEtat AS ENUM ('en préparation', 'disponible', 'traitée');
+CREATE TYPE eEtat AS ENUM ('en preparation', 'disponible', 'traitee');
 
 -- Exemple de requete:
 -- 	SELECT e.enumlabel 
@@ -142,8 +144,8 @@ CREATE TYPE eEtat AS ENUM ('en préparation', 'disponible', 'traitée');
 CREATE TABLE IF NOT EXISTS tCommande(
 	idPanier INT PRIMARY KEY,
 	dateValidation TIMESTAMP NOT NULL,
-	etat eEtat NOT NULL,
-	heureLivraison INT NOT NULL,
+	etatCmd eEtat NOT NULL,
+	heureLivraison TIMESTAMP NOT NULL,
 	lieuLivraison VARCHAR(200) NOT NULL,
 	idTournee INT,
 	FOREIGN KEY (idPanier) REFERENCES tPanier (id),
