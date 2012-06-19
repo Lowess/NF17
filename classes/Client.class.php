@@ -6,7 +6,7 @@ Class Client {
 	//Méthodes statiques
     public static function Connection($login, $pass) {
 		// table tclient
-		$sql = "select login, mdp from tclient where $login = login and $pass = mdp";
+		$sql = "SELECT login, mdp FROM tclient where login='$login' and mdp='$pass'";
 		$res = DB::Sql($sql);
 		$res2 = pg_fetch_assoc($res);
 		
