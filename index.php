@@ -54,39 +54,49 @@ Controller::load_content();
 			?>
 				<div id='liens'>
 					<a href="">Pannier</a>
+					<a href="">Modifier les informations du compte</a>
+					<a href="">Historique des commandes</a>
 				</div>
 			<?php
 			} else {
-				// responsable marketing
-				if (isset($_SESSION['user']) && $_SESSION['user'] == 'responsableMarketing') {
-			?>
-				<div id='liens'>
-					Ceci est l'accès aux différents modules<br />
-					<a href="?module=StatistiqueClient">Statistique Client</a>
-					<a href="?module=PointFidelite">Gestion points de fidelité</a>
-					<a href="?module=BaremePromo">Gestion des Promotions</a>
+                // responsable marketing
+                if (isset($_SESSION['user']) && $_SESSION['user'] == 'responsableMarketing') {
+            ?>
+                <div id='liens'>
+                    Ceci est l'accès aux différents modules<br />
+                    <a href="?module=StatistiqueClient">Statistique Client</a>
+                    <a href="?module=PointFidelite">Gestion points de fidelité</a>
+                    <a href="?module=BaremePromo">Gestion des Promotions</a>
 
-				</div>
-			<?php
-				// responsable catalogue
-				} else if( isset($_SESSION['user']) && $_SESSION['user'] == 'responsableCatalogue') {
-			?>
-				<div id='liens'>
-					Ceci est l'accès aux différents modules<br />
-					<a href="?module=Rayon">Rayon</a>
-					<a href="?module=Produit">Produits</a>
-				</div>
-			<?php
-				// responsable livraison
-				} else if (isset($_SESSION['user']) && $_SESSION['user'] == 'responsableLivraison') {
-			?>
-				<div id='liens'>
-					Ceci est l'accès aux différents modules<br /> 
-					<a href="?module=Commande">Commande</a>
-				</div>
-			<?php
-				}	
-			}
+                </div>
+            <?php
+                // responsable catalogue
+                } else if( isset($_SESSION['user']) && $_SESSION['user'] == 'responsableCatalogue') {
+            ?>
+                <div id='liens'>
+                    Ceci est l'accès aux différents modules<br />
+                    <a href="?module=Rayon">Rayon</a>
+                    <a href="?module=Produit">Produits</a>
+                </div>
+            <?php
+                // responsable livraison
+                } else if (isset($_SESSION['user']) && $_SESSION['user'] == 'responsableLivraison') {
+            ?>
+                <div id='liens'>
+                    Ceci est l'accès aux différents modules<br /> 
+                    <a href="?module=Commande">Commande</a>
+                </div>
+            <?php
+                } else {
+                // cas d'un visiteur
+            ?>
+                <div id='liens'>
+                    <a href="?module=Client&action=creationNouveauCompte">Création d'un nouveau compte</a>
+                </div>
+            
+            <?php
+            }
+            }
 			?>
 			
 		</div>

@@ -6,18 +6,34 @@ Class Client {
 	//Méthodes statiques
     public static function Connection($login, $pass) {
 		// table tclient
-		$sql = "SELECT login, mdp FROM tclient where login='$login' and mdp='$pass'";
+		$sql = "SELECT * FROM tclient where login='$login' and mdp='$pass'";
 		$res = DB::Sql($sql);
 		$res2 = pg_fetch_assoc($res);
 		
 		// si login et mdp trouvés alors, il peut se connecter.
 		if (isset($res2['login']) && isset($res2['mdp'])) {
-			return true;
+			$c = new Client($res2['login'],$res2['mdp'],$res2['nom'],$res2['prenom'],$res2['adresse'],$res2['age'],$res2['adresse'],$res2['pointfidelite'],'client');
+			$c->Creer();
+			return $c;
 		} else {
 			return false;
 		}	
 	}
 	
+	public function ChercherParId($id) {
+		$sql = "select * from tclient where id='$id'";
+		$res = DB::Sql($sql);
+		$res2 = pg_fetch_assoc($res);
+		
+		// si login et mdp trouvés alors, il peut se connecter.
+		if (!empty($res2)) {
+			$c = new Client($res2['login'],$res2['mdp'],$res2['nom'],$res2['prenom'],$res2['adresse'],$res2['age'],$res2['adresse'],$res2['pointfidelite'],'client');
+			$c->Creer();
+			return $c;
+		} else {
+			return false;
+		}
+	}
 	
 	//Méthodes de classe publiques
 	public function Enregistrer(){
@@ -35,7 +51,7 @@ Class Client {
 	
 	// Méthodes de classe privées
 	function Inserer(){	
-		$sql="INSERT INTO ... VALUES (...)";
+		$sql="INSERT INTO tclient VALUES (...)";
 		$res=DB::Sql($sql);
 		return mysql_insert_id();
 	}
