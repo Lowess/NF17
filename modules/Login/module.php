@@ -23,7 +23,7 @@ switch(Form::get('action'))
 		break;
 	default:
 		// si déjà connecté
-		if(Session::ouverte())
+		if (Session::ouverte())
 		{
 			echo "<p><a href='?module=login&action=Deconnect'>Déconnexion</a></p>";
 		}
@@ -50,7 +50,7 @@ function login_client()
 		Site::message_info("Mot de passe ou login invalide");
 		Site::redirect("index.php");
 	} else {
-		$userName = 'Client';
+		$userName = 'client';
 		Session::ouvrir($userName);
 		Site::message_info("Vous êtes connecté");
 		Site::redirect("index.php");
@@ -68,7 +68,7 @@ function login_catalogue()
 		Site::message_info("Mot de passe ou login invalide");
 		Site::redirect("index.php");
 	} else {
-		$userName = 'Responsable catalogue';
+		$userName = 'responsableCatalogue';
 		Session::ouvrir($userName);
 		Site::message_info("Vous êtes connecté");
 		Site::redirect("index.php");
@@ -84,7 +84,7 @@ function login_marketing()
 		Site::message_info("Mot de passe ou login invalide");
 		Site::redirect("index.php");
 	} else {
-		$userName = 'Responsable marketing';
+		$userName = 'responsableMarketing';
 		Session::ouvrir($userName);
 		Site::message_info("Vous êtes connecté");
 		Site::redirect("index.php");
@@ -101,7 +101,7 @@ function login_livraison()
 		Site::message_info("Mot de passe ou login invalide");
 		Site::redirect("index.php");
 	} else {
-		$userName = 'Responsable livraison';
+		$userName = 'responsableLivraison';
 		Session::ouvrir($userName);
 		Site::message_info("Vous êtes connecté");
 		Site::redirect("index.php");
