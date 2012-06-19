@@ -1,6 +1,8 @@
 <fieldset>
 	<legend>Formulaire d'ajout d'un produit</legend>
 	
+	<br /><a href='?module=Produit#table'><img src='template/retour.png' /> Retour à la liste des produits</a> 
+
 	<form enctype="multipart/form-data" action='?module=Produit&action=valide' method='post' class='form_ajout'>
 		
 	    	<input type='hidden' id='id' name='id' value="<?php if(isset($p)) echo $p->id; ?>">
@@ -36,8 +38,8 @@
 				<option value='15'>Autres</option>
 			</select>
 			
-			<!-- <label>bareme promo</label> -->
-			<input type='hidden' id='baremePromo' name='baremePromo' value="<?php echo Form::get('baremePromo') ?>">
+			<label>bareme promo</label>
+			<input type='text' id='baremePromo' name='baremePromo' value="<?php echo Form::get('baremePromo') ?>">
 
 			<label>rayon d'appartenance</label>
 			<select id='idRayon' name='idRayon'>

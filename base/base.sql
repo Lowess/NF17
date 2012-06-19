@@ -66,12 +66,12 @@ create table if not exists tproduit(
 );
 create sequence seq_tproduit;
 
-create table if not exists tassociation(
-	id int not null,
-	theme varchar(50) not null,
-	foreign key (id) references tproduit (id),
-	foreign key (theme) references trayon (theme),
-	primary key (id, theme) -- clé binaire
+CREATE TABLE IF NOT EXISTS tAssociation(
+	id INT NOT NULL,
+	theme VARCHAR(50) NOT NULL,
+	FOREIGN KEY (id) REFERENCES tProduit (id),
+	FOREIGN KEY (theme) REFERENCES tRayon (theme),
+	PRIMARY KEY (id, theme) -- Clé binaire
 );
 
 create table if not exists tclient(
@@ -91,6 +91,7 @@ create table if not exists tpanier(
 	login varchar(50),
 	foreign key (login) references tclient (login)
 );
+CREATE SEQUENCE seq_tPannier;
 
 create table if not exists tcontient(
 	idproduit int not null,
@@ -138,25 +139,26 @@ create table if not exists trealise(
 	primary key (idtournee, idlivreur)
 );
 
--- création d'un type enum pour tcommande.etat
 
-create type eetat as enum ('en préparation', 'disponible', 'traitée');
+-- Création d'un type ENUM pour tCommande.etat
 
--- exemple de requete:
--- 	select e.enumlabel 
---	from pg_enum e 
---	join pg_type t on (t.oid=e.enumtypid) 
---	where t.typname='eetat';
+CREATE TYPE eEtat AS ENUM ('en preparation', 'disponible', 'traitee');
 
-create table if not exists tcommande(
-	idpanier int primary key,
-	datevalidation timestamp not null,
-	etat eetat not null,
-	heurelivraison int not null,
-	lieulivraison varchar(200) not null,
-	idtournee int,
-	foreign key (idpanier) references tpanier (id),
-	foreign key (idtournee) references ttournee (id)
+-- Exemple de requete:
+-- 	SELECT e.enumlabel 
+--	FROM pg_enum e 
+--	JOIN pg_type t ON (t.oid=e.enumtypid) 
+--	WHERE t.typname='eEtat';
+
+CREATE TABLE IF NOT EXISTS tCommande(
+	idPanier INT PRIMARY KEY,
+	dateValidation TIMESTAMP NOT NULL,
+	etatCmd eEtat NOT NULL,
+	heureLivraison TIMESTAMP NOT NULL,
+	lieuLivraison VARCHAR(200) NOT NULL,
+	idTournee INT,
+	FOREIGN KEY (idPanier) REFERENCES tPanier (id),
+	FOREIGN KEY (idTournee) REFERENCES tTournee (id)
 );
 
 ------------------------------------------------------------------------
