@@ -54,7 +54,7 @@ function login_client()
 		Site::redirect("index.php");
 	}
 }
-}
+
 
 // connexion d'un Responsable catalogue à la base
 function login_catalogue()
