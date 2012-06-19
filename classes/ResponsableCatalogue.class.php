@@ -11,7 +11,7 @@ Class ResponsableCatalogue {
 		$res2 = pg_fetch_assoc($res);
 		
 		// si login et mdp trouvés alors, il peut se connecter.
-		if ($res2['login'] && $res2['mdp']) {
+		if (isset($res2['login']) && isset($res2['mdp'])) {
 			return true;
 		} else {
 			return false;
