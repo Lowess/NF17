@@ -1,5 +1,7 @@
-<fieldset>
-	<legend>Formulaire d'ajout d'un produit</legend>
+<br /><a href='?module=Produit#table'><img src='template/retour.png' /> Retour à la liste des produits</a> 
+
+<fieldset class="clear">
+	<legend>Formulaire d'ajout ou de modification d'un produit</legend>
 	
 	<form enctype="multipart/form-data" action='?module=Produit&action=valide' method='post' class='form_ajout'>
 		

@@ -56,6 +56,9 @@ Controller::load_content();
 				<a href="?module=StatistiqueClient">Statistique Client</a>
 				<a href="?module=PointFidelite">Gestion points de fidelité</a>
 				<a href="?module=BaremePromo">Gestion des Promotions</a>
+				<a href="?module=Livreur">Livreur</a>
+				<a href="?module=Commande">Commande</a>
+				<a href="">Pannier</a>
 			</div>
 		</div>
 		
