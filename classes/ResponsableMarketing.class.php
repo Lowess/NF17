@@ -5,7 +5,6 @@ Class ResponsableMarketing {
 	
 	//Méthodes statiques
     public static function Connection($login, $pass) {
-	
 		// table tresponsablemarketing
 		$sql = "SELECT login, mdp FROM tresponsablemarketing where login='$login' and mdp='$pass'";
 		

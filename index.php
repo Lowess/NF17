@@ -39,30 +39,56 @@ Controller::load_content();
 		</div>
 		
 		<div id='menu'>
+			
 			<div id='login'>
 				<!-- Espace connection -->
 				<?php require_once('modules/Login/module.php');?>		
-				<?php 
-					// afficher le menu en fonction du type personne
-					// le client ne voit aucun menu admistrateur
-					if (!isset($_SESSION['user']['client'])) {
-						
-					}
-						
-				?>
 			</div>
-			<div id='liens'>
-				Ceci est l'accès aux différents modules<br />
-				<a href="?module=Rayon">Rayon</a>
-				<a href="?module=Produit">Produits</a>
-				<a href="?module=Pannier">Pannier</a>
-				<a href="?module=StatistiqueClient">Statistique Client</a>
-				<a href="?module=PointFidelite">Gestion points de fidelité</a>
-				<a href="?module=BaremePromo">Gestion des Promotions</a>
-				<a href="?module=Livreur">Livreur</a>
-				<a href="?module=Commande">Commande</a>
-				<a href="">Pannier</a>
-			</div>
+			
+			<?php 
+			/* Afficher le menu en fonction du type personne */
+			
+			// si c'est le client
+			// le client ne voit aucun menu admistrateur
+			if (isset($_SESSION['user']) && $_SESSION['user'] == 'client') {
+			?>
+				<div id='liens'>
+					<a href="">Pannier</a>
+				</div>
+			<?php
+			} else {
+				// responsable marketing
+				if (isset($_SESSION['user']) && $_SESSION['user'] == 'responsableMarketing') {
+			?>
+				<div id='liens'>
+					Ceci est l'accès aux différents modules<br />
+					<a href="?module=StatistiqueClient">Statistique Client</a>
+					<a href="?module=PointFidelite">Gestion points de fidelité</a>
+					<a href="?module=BaremePromo">Gestion des Promotions</a>
+
+				</div>
+			<?php
+				// responsable catalogue
+				} else if( isset($_SESSION['user']) && $_SESSION['user'] == 'responsableCatalogue') {
+			?>
+				<div id='liens'>
+					Ceci est l'accès aux différents modules<br />
+					<a href="?module=Rayon">Rayon</a>
+					<a href="?module=Produit">Produits</a>
+				</div>
+			<?php
+				// responsable livraison
+				} else if (isset($_SESSION['user']) && $_SESSION['user'] == 'responsableLivraison') {
+			?>
+				<div id='liens'>
+					Ceci est l'accès aux différents modules<br /> 
+					<a href="?module=Commande">Commande</a>
+				</div>
+			<?php
+				}	
+			}
+			?>
+			
 		</div>
 		
 		<?php

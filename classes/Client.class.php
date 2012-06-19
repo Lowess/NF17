@@ -4,7 +4,7 @@ Class Client {
 	//Attributs
 	
 	//Méthodes statiques
-    static public function Connection($login, $pass) {
+    public static function Connection($login, $pass) {
 		// table tclient
 		$sql = "select login, mdp from tclient where $login = login and $pass = mdp";
 		$res = DB::Sql($sql);
