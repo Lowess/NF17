@@ -2,17 +2,28 @@
 
 Class ResponsableCatalogue {
 	//Attributs
+	public $login;
+	public $mdp;
+	public $type;
 	
-	//Méthodes statiquesS
-	public static function Connection($login, $pass) {
+	public function Creer($login, $mdp, $type){
+		$this->login=$login;
+		$this->mdp=$mdp;
+		$this->type=$type;
+	}
+	
+	//Méthodes statiques
+    public static function Connection($login, $pass) {
 		// table tresponsablecatalogue
-		$sql = "SELECT login, mdp FROM tresponsablecatalogue where login='$login' and mdp='$pass'";
+		$sql = "SELECT * FROM tresponsablecatalogue where login='$login' and mdp='$pass'";
 		$res = DB::Sql($sql);
 		$res2 = pg_fetch_assoc($res);
 		
 		// si login et mdp trouvés alors, il peut se connecter.
 		if (isset($res2['login']) && isset($res2['mdp'])) {
-			return true;
+			$c = new ResponsableCatalogue($res2['login'],$res2['mdp']'responsableCatalogue');
+			$c->Creer();
+			return $c;
 		} else {
 			return false;
 		}	

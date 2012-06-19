@@ -1,6 +1,7 @@
 <?php
 
 Class Client {
+	
 	//Attributs
 	public $login;
 	public $mdp;
@@ -31,8 +32,8 @@ Class Client {
 		
 		// si login et mdp trouvés alors, il peut se connecter.
 		if (isset($res2['login']) && isset($res2['mdp'])) {
-			$c = new Client($res2['login'],$res2['mdp'],$res2['nom'],$res2['prenom'],$res2['adresse'],$res2['age'],$res2['adresse'],$res2['pointfidelite'],'client');
-			$c->Creer();
+			$c = new Client();
+			$c->Creer($res2['login'],$res2['mdp'],$res2['nom'],$res2['prenom'],$res2['adresse'],$res2['age'],$res2['adresse'],$res2['pointfidelite'],'client');
 			return $c;
 		} else {
 			return false;
