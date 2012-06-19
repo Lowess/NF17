@@ -8,7 +8,8 @@ L'INITIALISATION DE MES VARIABLES PHP SE FONT DANS LE MODULE! -->
 
 	<?php
 		foreach($tab2 as $rayon => $r){
-			echo "<fieldset style='clear:left;'>";
+			$ancre=$rayon;
+			echo "<fieldset style='clear:left;' id='$ancre'>";
 			echo"<legend>Rayon: $rayon</legend>";
 				if(!empty($r)){
 					echo"<table border=1>";
@@ -19,6 +20,7 @@ L'INITIALISATION DE MES VARIABLES PHP SE FONT DANS LE MODULE! -->
 							<th>Prix de base</th>
 							<th>Categorie</th>
 							<th>Barème promo</th>
+							<th>Acheter</th>
 						</tr>";
 						foreach($r as $produit => $p){
 							echo"<tr>";
@@ -28,7 +30,8 @@ L'INITIALISATION DE MES VARIABLES PHP SE FONT DANS LE MODULE! -->
 									echo"<td>$p->prixDeBase</td>";
 									echo"<td>$p->categorie</td>";
 									echo"<td>$p->baremePromo</td>";
-									echo"<td><a href='?module=default&action=ajout&id={$p->id}'><img src='template/panier.png' title='Ajouter au Panier'/></a></td>";
+									if(isset(Session::$user) && Session::$user == 'client')
+										echo"<td><a href='?module=default&action=ajout&id={$p->id}#$ancre'><img src='template/panier.png' title='Ajouter au Panier'/></a></td>";
 							echo"</tr>";
 						}
 					echo"</table>";
@@ -40,3 +43,5 @@ L'INITIALISATION DE MES VARIABLES PHP SE FONT DANS LE MODULE! -->
 		}
 	?>
 </fieldset>
+
+
