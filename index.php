@@ -33,19 +33,22 @@ Controller::load_content();
 	</head>
 	<body>
 		<div id='header'>
-			<a href="?module=login&action=connectionMarketing">Accès Responsable Marketing</a><br />
-			<a href="?module=login&action=connectionCatalogue">Accès Responsable Catalogue</a><br />
-			<a href="?module=login&action=connectionLivraison">Accès Responsable Livraison</a><br />
+			<a href="?module=ResponsableMarketing">Accès Responsable Marketing</a><br />
+			<a href="?module=ResponsableCatalogue">Accès Responsable Catalogue</a><br />
+			<a href="?module=ResponsableLivraison">Accès Responsable Livraison</a><br />
 		</div>
 		
 		<div id='menu'>
 			<div id='login'>
 				<!-- Espace connection -->
-				<?php require_once('modules/login/module.php');?>
-				<!-- Espace admin -->				
+				<?php require_once('modules/Login/module.php');?>		
 				<?php 
-					if (isset($_SESSION['user']))
-						//Menu...
+					// afficher le menu en fonction du type personne
+					// le client ne voit aucun menu admistrateur
+					if (!isset($_SESSION['user']['client'])) {
+						
+					}
+						
 				?>
 			</div>
 			<div id='liens'>
@@ -57,6 +60,7 @@ Controller::load_content();
 		</div>
 		
 		<?php
+		// Vous êtes déconnecté / connecté 
 			if(Site::messages())
 				Site::liste_message();
 		?>
