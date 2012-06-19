@@ -9,11 +9,11 @@ INSERT INTO tRayon (theme) VALUES ('Droguerie Hygiène');
 INSERT INTO tRayon (theme) VALUES ('Surgelés');
 INSERT INTO tRayon (theme) VALUES ('Equipement de la maison');
 
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo) VALUES (1,'Jambon Herta x4', to_timestamp('12 Jun 2012', 'DD Mon YYYY'), 2.64, 40, 'Viandes', 0);
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo) VALUES (2,'Spaghetti Panzani 3min', to_timestamp('31 Dec 2012', 'DD Mon YYYY'), 1.81, 100, 'Pâtes', 0);
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo) VALUES (3,'Pack de lait Paturage de France', to_timestamp('11 Aug 2012', 'DD Mon YYYY'), 4.12, 40, 'Produits Laitiers', 0);
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo) VALUES (4,'La laitière mousse au chocolat x4', to_timestamp('21 Jul 2012', 'DD Mon YYYY'), 3.08, 20, 'Produits Laitiers', 0);
-INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo) VALUES (5,'Curry Ducros 250ml', to_timestamp('31 Jan 2014', 'DD Mon YYYY'), 2.96, 5, 'Epices', 0);
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (1,'Jambon Herta x4', to_timestamp('12 Jun 2012', 'DD Mon YYYY'), 2.64, 40, 'Viandes', 0, 'Frais libre service');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (2,'Spaghetti Panzani 3min', to_timestamp('31 Dec 2012', 'DD Mon YYYY'), 1.81, 100, 'Pâtes', 0, 'Epicerie');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (3,'Pack de lait Paturage de France', to_timestamp('11 Aug 2012', 'DD Mon YYYY'), 4.12, 40, 'Produits Laitiers', 0, 'Frais libre service');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (4,'La laitière mousse au chocolat x4', to_timestamp('21 Jul 2012', 'DD Mon YYYY'), 3.08, 20, 'Produits Laitiers', 0, 'Frais libre service');
+INSERT INTO tProduit (id, nom, datePeremption, prixDeBase, stock, categorie, baremePromo, idRayon) VALUES (5,'Curry Ducros 250ml', to_timestamp('31 Jan 2014', 'DD Mon YYYY'), 2.96, 5, 'Epices', 0, 'Epicerie');
 
 --
 

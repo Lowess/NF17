@@ -1,179 +1,280 @@
--- Script de construction de la base
+-- script de construction de la base
 
 ------------------------------------------------------------------------
--- CONVENTION
+-- convention
 ------------------------------------------------------------------------
 
---- 1) Les noms de tables
--- 		a) Les noms de tables se note précédé d'un "t"
+--- 1) les noms de tables
+-- 		a) les noms de tables se note précédé d'un "t"
 --
--- 		Exemple:
--- 			tEtudiant
---		b) Pas de pluriel!
---		c) Reprendre les noms donnés dans le MLD*
+-- 		exemple:
+-- 			tetudiant
+--		b) pas de pluriel!
+--		c) reprendre les noms donnés dans le mld*
 --
 --		* pour identifiant on pourra se permettre id
 ---
 
---- 2) Les noms d'attributs
--- 		a) Les noms de d'attibuts commencent par une minuscule
+--- 2) les noms d'attributs
+-- 		a) les noms de d'attibuts commencent par une minuscule
 --
--- 		Exemple:
+-- 		exemple:
 -- 			nom
 --			identifiant
---		b) Si nom composé alors mettre majuscule au deuxième
+--		b) si nom composé alors mettre majuscule au deuxième
 --
---		Exemple:
---			nomComposeQuiEstUnPeuLong
+--		exemple:
+--			nomcomposequiestunpeulong
 ---
 
 ------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
--- NOTE
+-- note
 ------------------------------------------------------------------------
 
 --- 1)
--- On préférera le type INT au lieu du type DATE & HEURE, 
+-- on préférera le type int au lieu du type date & heure, 
 -- ce qui facilitera les calculs
 ---
 
 ------------------------------------------------------------------------
---DROP DATABASE supermarche
+--drop database supermarche
 
---CREATE DATABASE supermarche
+--create database supermarche
 
-CREATE TABLE IF NOT EXISTS tRayon(
-	theme VARCHAR(200) PRIMARY KEY
+create table if not exists trayon(
+	theme varchar(200) primary key
 );
 
-CREATE TABLE IF NOT EXISTS tProduit(
-	id INT PRIMARY KEY,
-	nom VARCHAR(200),
-	datePeremption TIMESTAMP,
-	prixDeBase FLOAT,
-	stock INT,
-	categorie VARCHAR(200),
-	baremePromo FLOAT
+create table if not exists tproduit(
+	id int primary key,
+	nom varchar(200),
+	dateperemption timestamp,
+	prixdebase float,
+	stock int,
+	categorie varchar(200),
+	baremepromo float default 0,
+	idrayon varchar(200) not null,
+	pointfidelite int default 0,
+	foreign key (idrayon) references trayon (theme),
+	check (prixdebase>=0),
+	check (stock>=0),
+	check (baremepromo>=0),
+	check (baremepromo<=100),
+	check (pointfidelite>=0)
+);
+create sequence seq_tproduit;
+
+create table if not exists tassociation(
+	id int not null,
+	theme varchar(50) not null,
+	foreign key (id) references tproduit (id),
+	foreign key (theme) references trayon (theme),
+	primary key (id, theme) -- clé binaire
 );
 
-CREATE TABLE IF NOT EXISTS tAssociation(
-	id INT NOT NULL,
-	theme VARCHAR(50) NOT NULL,
-	FOREIGN KEY (id) REFERENCES tProduit (id),
-	FOREIGN KEY (theme) REFERENCES tRayon (theme),
-	PRIMARY KEY (id, theme) -- Clé binaire
+create table if not exists tclient(
+	login varchar(50) primary key,
+	mdp varchar(50) not null,
+	nom varchar(100) not null,
+	prenom varchar(100) not null,
+	adresse varchar(200),
+	age int,
+	pointfidelite int
+	
 );
 
-CREATE TABLE IF NOT EXISTS tClient(
-	login VARCHAR(50) PRIMARY KEY,
-	mdp VARCHAR(50) NOT NULL,
-	nom VARCHAR(100) NOT NULL,
-	prenom VARCHAR(100) NOT NULL,
-	adresse VARCHAR(200),
-	age INT,
-	pointFidelite INT
+create table if not exists tpanier(
+	id int primary key,
+	datepanier timestamp,
+	login varchar(50),
+	foreign key (login) references tclient (login)
 );
 
-CREATE TABLE IF NOT EXISTS tPanier(
-	id INT PRIMARY KEY,
-	datePanier TIMESTAMP,
-	login VARCHAR(50),
-	FOREIGN KEY (login) REFERENCES tClient (login)
+create table if not exists tcontient(
+	idproduit int not null,
+	idpanier int not null,
+	quantite int,
+	prixpublicunitaire float,
+	foreign key (idproduit) references tproduit (id),
+	foreign key (idpanier) references tpanier (id),
+	primary key (idproduit, idpanier), -- clé binaire
+	check (quantite>=0)
 );
 
-CREATE TABLE IF NOT EXISTS tContient(
-	idProduit INT NOT NULL,
-	idPanier INT NOT NULL,
-	quantite INT,
-	prixPublicUnitaire FLOAT,
-	FOREIGN KEY (idProduit) REFERENCES tProduit (id),
-	FOREIGN KEY (idPanier) REFERENCES tPanier (id),
-	PRIMARY KEY (idProduit, idPanier) -- Clé binaire
+create table if not exists tresponsablelivraison(
+	login varchar(50) primary key,
+	mdp varchar(50) not null
 );
 
-CREATE TABLE IF NOT EXISTS tResponsableLivraison(
-	login VARCHAR(50) PRIMARY KEY,
-	mdp VARCHAR(50) NOT NULL
+create table if not exists tresponsablecatalogue(
+	login varchar(50) primary key,
+	mdp varchar(50) not null
 );
 
-CREATE TABLE IF NOT EXISTS tResponsableCatalogue(
-	login VARCHAR(50) PRIMARY KEY,
-	mdp VARCHAR(50) NOT NULL
+create table if not exists tlivreur(
+	login varchar(50) primary key,
+	mdp varchar(50) not null
 );
 
-CREATE TABLE IF NOT EXISTS tLivreur(
-	login VARCHAR(50) PRIMARY KEY,
-	mdp VARCHAR(50) NOT NULL
+create table if not exists tresponsablemarketing(
+	login varchar(50) primary key,
+	mdp varchar(50) not null,
+	baremepoint float,
+	check (baremepromo<=100)
 );
 
-CREATE TABLE IF NOT EXISTS tResponsableMarketing(
-	login VARCHAR(50) PRIMARY KEY,
-	mdp VARCHAR(50) NOT NULL,
-	baremePoint FLOAT
+create table if not exists ttournee(
+	id int primary key, -- check (id in tlivreur), contrainte impossible
+	datetournee timestamp not null
 );
 
-CREATE TABLE IF NOT EXISTS tTournee(
-	id INT PRIMARY KEY, -- CHECK (id IN tLivreur), Contrainte impossible
-	dateTournee TIMESTAMP NOT NULL
+create table if not exists trealise(
+	idtournee int not null,
+	idlivreur varchar(50) not null,
+	foreign key (idtournee) references ttournee (id),
+	foreign key (idlivreur) references tlivreur (login),
+	primary key (idtournee, idlivreur)
 );
 
-CREATE TABLE IF NOT EXISTS tRealise(
-	idTournee INT NOT NULL,
-	idLivreur VARCHAR(50) NOT NULL,
-	FOREIGN KEY (idTournee) REFERENCES tTournee (id),
-	FOREIGN KEY (idLivreur) REFERENCES tLivreur (login),
-	PRIMARY KEY (idTournee, idLivreur)
-);
+-- création d'un type enum pour tcommande.etat
 
--- Création d'un type ENUM pour tCommande.etat
+create type eetat as enum ('en préparation', 'disponible', 'traitée');
 
-CREATE TYPE eEtat AS ENUM ('en préparation', 'disponible', 'traitée');
+-- exemple de requete:
+-- 	select e.enumlabel 
+--	from pg_enum e 
+--	join pg_type t on (t.oid=e.enumtypid) 
+--	where t.typname='eetat';
 
--- Exemple de requete:
--- 	SELECT e.enumlabel 
---	FROM pg_enum e 
---	JOIN pg_type t ON (t.oid=e.enumtypid) 
---	WHERE t.typname='eEtat';
-
-CREATE TABLE IF NOT EXISTS tCommande(
-	idPanier INT PRIMARY KEY,
-	dateValidation TIMESTAMP NOT NULL,
-	etat eEtat NOT NULL,
-	heureLivraison INT NOT NULL,
-	lieuLivraison VARCHAR(200) NOT NULL,
-	idTournee INT,
-	FOREIGN KEY (idPanier) REFERENCES tPanier (id),
-	FOREIGN KEY (idTournee) REFERENCES tTournee (id)
+create table if not exists tcommande(
+	idpanier int primary key,
+	datevalidation timestamp not null,
+	etat eetat not null,
+	heurelivraison int not null,
+	lieulivraison varchar(200) not null,
+	idtournee int,
+	foreign key (idpanier) references tpanier (id),
+	foreign key (idtournee) references ttournee (id)
 );
 
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
 
-CREATE OR REPLACE VIEW
-			vCommande (	idPanier, 
-						datePanier, 
+create or replace view
+			vcommande (	idpanier, 
+						datepanier, 
 						login,
-						dateValidation, 
+						datevalidation, 
 						etat, 
-						heureLivraison,
-						lieuLivraison, 
-						idTournee
+						heurelivraison,
+						lieulivraison, 
+						idtournee
 					  )
-			AS 
-				SELECT  tPanier.id,
-						tPanier.datePanier,
-						tPanier.login,
-						tCommande.dateValidation,
+			as 
+				select  tpanier.id,
+						tpanier.datepanier,
+						tpanier.login,
+						tcommande.datevalidation,
 						e.enumlabel,
-						tCommande.heureLivraison,
-						tCommande.lieuLivraison,
-						tCommande.idTournee
-				FROM tPanier, tCommande, pg_enum e
-				--Jointure enum
-				JOIN pg_type t ON (t.oid=e.enumtypid) 
-				-- Restriction enum
-				WHERE t.typname='eEtat'
-				--Condition de jointure vue
-				AND tPanier.id = tCommande.idPanier
+						tcommande.heurelivraison,
+						tcommande.lieulivraison,
+						tcommande.idtournee
+				from tpanier, tcommande, pg_enum e
+				--jointure enum
+				join pg_type t on (t.oid=e.enumtypid) 
+				-- restriction enum
+				where t.typname='eetat'
+				--condition de jointure vue
+				and tpanier.id = tcommande.idpanier;
+
+create or replace view
+			vstatistiqueproduit(id,
+								nom,
+								dateperemption,
+								prixdebase,
+								prixmoyen,
+								stock,
+								qtevendue,
+								categorie,
+								baremepromo,
+								pointfidelite,
+								idrayon
+								)
+			as
+				select  tproduit.id,
+						tproduit.nom,
+						tproduit.dateperemption,
+						tproduit.prixdebase,
+						avg(tcontient.prixpublicunitaire*tcontient.quantite)/sum(tcontient.quantite),
+						tproduit.stock,
+						sum(tcontient.quantite),
+						tproduit.categorie,
+						tproduit.baremepromo,
+						tproduit.pointfidelite,
+						tproduit.idrayon
+				from tproduit, tcontient
+				where tproduit.id = tcontient.idproduit
+				group by tproduit.id;
+				
+
+create or replace view
+			vstatistiqueclient( login,
+								nom,
+								prenom,
+								adresse,
+								age,
+								pointfidelite,
+								nombredepanierachete,
+								prixmoyenpanier
+							)
+			as
+				select  tclient.login,
+						tclient.nom,
+						tclient.prenom,
+						tclient.adresse,
+						tclient.age,
+						tclient.pointfidelite,
+						count(distinct tpanier.id),
+						sum(tcontient.prixpublicunitaire*tcontient.quantite)
+				from tclient, tpanier, tcontient
+				where tpanier.id = tcontient.idpanier and
+					tpanier.login=tclient.login
+				group by tclient.login;
+
+create or replace view
+			vproduitclient( id,
+					nom,
+					dateperemption,
+					prix,
+					categorie,
+					baremepromo,
+					pointfidelite,
+					idrayon)
+			as
+				select  tproduit.id,
+						tproduit.nom,
+						tproduit.dateperemption,
+						tproduit.prixdebase * (1 - baremePromo/100),
+						tproduit.categorie,
+						tproduit.baremepromo,
+						tproduit.pointfidelite,
+						tproduit.idrayon
+				from tproduit
+				where stock > 0;
+				
+	
+CREATE FUNCTION trig_contient() RETURNS trigger AS $trig_contient$			
+    BEGIN
+		update tproduit set stock = stock-NEW.quantite where id=NEW.idproduit;
+		update tclient set pointfidelite = pointfidelite+(NEW.quantite*
+															(select pointfidelite from tproduit where id=NEW.idproduit))
+ 					where login=(select login from tpanier where id=NEW.idpanier);
+        RETURN NEW;
+    END;
+$trig_contient$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trig_contient BEFORE INSERT OR UPDATE ON tContient
+    FOR EACH ROW EXECUTE PROCEDURE trig_contient();

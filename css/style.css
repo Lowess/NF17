@@ -25,6 +25,7 @@
 body { 
 		width:auto;
 		height:auto;
+		margin:0% 10% 0% 10%;
 		font-family:Verdana,Calibri,Arial;
 		font-size:0.9em;
 		position:relative;
@@ -34,12 +35,23 @@ body {
 table {
 	font-family:Verdana,Calibri,Arial;
 	font-size:0.9em;
+	
+	text-align:center; 
+	padding:0px; 
+	border-spacing:0; 
+	-moz-border-radius:5px; 
+	-webkit-border-radius:5px; 
+	-khtml-border-radius:5px;		
+	border: 1px solid black;
+
 }
 
 #header	{
-		position:relative;
-		height:200px;
-		background-color:#00759E;
+	position:relative;
+	height:200px;
+	background-color:#00759E;
+	/*background-image:url('../template/logo.png');
+	background-repeat: no-repeat no-repeat;*/
 }
 
 #login	{
@@ -72,7 +84,13 @@ table {
 	float:left;
 	clear:both;
 	width:100%;
-	background-color:#FFD75F;	
+	margin-top:2%;
+	/*background-color:#FFD75F;	*/
+	border: 3px solid #66aa22;
+	box-shadow: 8px 8px 0px #dddddd; 
+	-moz-border-radius:5px; 
+	-webkit-border-radius:5px; 
+	-khtml-border-radius:5px;
 }
 		
 #zonemessage{ 
@@ -104,12 +122,20 @@ input:focus {
 */
 			}
 
-input 	{
-		-moz-border-radius:5px; 
-		-webkit-border-radius:5px; 
-		-khtml-border-radius:5px;
-		}
-			
+input{
+	-moz-border-radius:5px; 
+	-webkit-border-radius:5px; 
+	-khtml-border-radius:5px;		
+	float:left;
+}
+
+select{
+	-moz-border-radius:5px; 
+	-webkit-border-radius:5px; 
+	-khtml-border-radius:5px;
+	float:left;
+}			
+
 .floatleft{float:left;}
 .floatright{float:right;}
 
@@ -119,15 +145,42 @@ div{
 	width:auto;
 }
 
-legend 	{
-
+label{
+	float:left;
+	clear:left;
+	width:100px;
+	margin:10px;
 }
 		
 fieldset{
 	float:left;
 	background-color:#FFFFFF;
-	width:100%;
-	border:0px solid black;
+	border:2px solid black;
+	margin:3% 1% 0% 1%;
+	-moz-border-radius:5px; 
+	-webkit-border-radius:5px; 
+	-khtml-border-radius:5px;		
+} 
+
+fieldset fieldset{
+	float:left;
+	background-color:#FFF;
+	border:2px solid #88bb33;
+	margin:3% 1% 0% 1%;
+	-moz-border-radius:5px; 
+	-webkit-border-radius:5px; 
+	-khtml-border-radius:5px;		
+} 
+
+legend{
+	background-color:#FFFFFF;
+	border:1px solid black;
+	-moz-border-radius:5px; 
+	-webkit-border-radius:5px; 
+	-khtml-border-radius:5px;	
 } 
 
 .clear{clear:both; border:none;}
+
+.endform{float:left; clear:both; margin-left:220px; width:auto;}
+

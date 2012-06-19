@@ -1,0 +1,78 @@
+	
+Produits laitiers et similaires, à l'exception des produits de la catégorie 02.0
+
+01.0
+
+		
+Matières grasses et huiles, et émulsions grasses
+
+02.0
+
+		
+Glaces de consommation (incluant les sorbets)
+
+03.0
+
+		
+Fruits et légumes (incluant champignons, racines et tubercules, légumes secs et légumineuses, aloès ordinaire), algues marines, fruits à coque et graines
+
+04.0
+
+		
+Confiserie
+
+05.0
+
+		
+Céréales et produits à base de céréales, dérivés de graines céréalières, de racines et tubercules, de légumes secs, légumineuses et de moelle ou cœur tendre de palmier, à l’exclusion des produits de boulangerie de la catégorie 7.0.
+
+06.0
+
+		
+Produits de boulangerie
+
+07.0
+
+		
+Viande et produits carnés, volaille et gibier inclus
+
+08.0
+
+		
+Poisson et produits de la pêche, incluant mollusques, crustacés et échinodermes
+
+09.0
+
+		
+Œufs et produits à base d'œufs
+
+10.0
+
+		
+Édulcorants, incluant le miel
+
+11.0
+
+		
+Sels, épices, potages, sauces, salades, produits à base de protéines
+
+12.0
+
+		
+Aliments destinés à une alimentation particulière
+
+13.0
+
+		
+Boissons, à l'exception des produits laitiers
+
+14.0
+
+		
+Amuse-gueules salés
+
+15.0
+
+		
+Aliments composés - aliments n'entrant pas dans les catégories 01 à 15.
+

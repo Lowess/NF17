@@ -34,17 +34,49 @@ Class Rayon {
 		}
 		return $res;
 	}
+	
+	public static function ChercherParId($id){
+		$sql="SELECT * FROM tRayon WHERE theme='$id'";
+		$tab=DB::Sql($sql);
+		$t=pg_fetch_assoc($tab);	
+		$r=new Rayon();
+		$r->Creer($t['theme']);
+	
+		return $r;
+	}
+	
+	static public function ListerParRayon(){
+		$rayons=self::Lister();
+		$fres=array();
+			
+		foreach($rayons as $rayon => $r){
+			
+			$sql="SELECT * FROM tProduit WHERE idRayon='{$r->theme}'";
+			$tab=DB::SqlToArray($sql);
+			$res=array();
+			
+			foreach($tab as $t){
+				$p=new Produit();
+				$p->Creer($t['nom'], $t['dateperemption'], $t['prixdebase'], $t['stock'], $t['categorie'], $t['baremepromo'], $t['idrayon'], $t['id']);
+				
+				//Gére la date
+				$e1=explode(" ",$p->datePeremption);
+				$e2=explode("-",$e1[0]);
+				$p->datePeremption=$e2[2]."/".$e2[1]."/".$e2[0];
+				$res[]=$p;
+			}
+			$fres[$r->theme]=$res;
+		}
+		//Site::debug($fres);
+		
+		return $fres;
+	}
+	
 
 	//Méthodes de classe privées	
 	function Inserer(){	
-		$sql="INSERT INTO tRayon VALUES (...)";
+		$sql="INSERT INTO tRayon(theme) VALUES ('{$this->theme}')";
 		$res=DB::Sql($sql);
-		return mysql_insert_id();
-	}
-
-	function Modifier(){
-		$sql="UPDATE tRayon SET ...";
-		$res=DB::Sql($sql);	
 	}
 };
 

@@ -33,7 +33,9 @@ Controller::load_content();
 	</head>
 	<body>
 		<div id='header'>
-			Ici le header
+			<a href="?module=login&action=connectionMarketing">Accès Responsable Marketing</a><br />
+			<a href="?module=login&action=connectionCatalogue">Accès Responsable Catalogue</a><br />
+			<a href="?module=login&action=connectionLivraison">Accès Responsable Livraison</a><br />
 		</div>
 		
 		<div id='menu'>
@@ -47,10 +49,13 @@ Controller::load_content();
 				?>
 			</div>
 			<div id='liens'>
-				Ceci est l'espace de liens<br />
+				Ceci est l'accès aux différents modules<br />
 				<a href="?module=Rayon">Rayon</a>
-				<a href="">Liens 2</a>
-				<a href="">Liens 3</a>
+				<a href="?module=Produit">Produits</a>
+				<a href="?module=Pannier">Pannier</a>
+				<a href="?module=StatistiqueClient">Statistique Client</a>
+				<a href="?module=PointFidelite">Gestion points de fidelité</a>
+				<a href="?module=BaremePromo">Gestion des Promotions</a>
 			</div>
 		</div>
 		
@@ -59,8 +64,6 @@ Controller::load_content();
 				Site::liste_message();
 		?>
 		<div id='contenu'>
-			Ceci est la zone d'affichage de contenu
-			
 			<?php
 				Controller::get_content();
 			?>	
