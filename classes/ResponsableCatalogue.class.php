@@ -3,7 +3,7 @@
 Class ResponsableCatalogue {
 	//Attributs
 	
-	//Méthodes statiques
+	//Méthodes statiquesS
 	public static function Connection($login, $pass) {
 		// table tresponsablecatalogue
 		$sql = "SELECT login, mdp FROM tresponsablecatalogue where login='$login' and mdp='$pass'";
