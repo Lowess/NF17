@@ -3,7 +3,7 @@
  	
 if ($_SERVER['SERVER_ADDR'] == '127.0.0.1') {
 //données pour la connexion à la base de données local
-    define("DB_HOST","127.0.0.1");
+    define("DB_HOST","localhost");
 	define("DB_USER","supermarche");
 	define("DB_PASS","supermarche");
 	define("BASE","supermarche");

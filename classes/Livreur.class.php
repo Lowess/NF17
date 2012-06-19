@@ -12,6 +12,13 @@ Class Livreur {
 		else
 			$this->Modifier();
 	}
+	
+	public static function NombreTourneeEffectue($idLivreur){
+		$sql="SELECT COUNT(*) as nb FROM tRealise WHERE idlivreur='$idLivreur'";
+		$tab=DB::Sql($sql);
+		$t=pg_fetch_assoc($tab);	
+		return $t['nb'];
+	}
 
 	public function Supprimer(){
 		$sql="DELETE FROM ... WHERE id='{$this->id}'";
@@ -28,7 +35,7 @@ Class Livreur {
 
 	function Modifier(){
 		$sql="UPDATE ... SET ...
-			WHERE ...='{$this->...}'";
+			WHERE ...=''";
 		$res=DB::Sql($sql);	
 	}		
 };

@@ -134,7 +134,7 @@ Class Produit {
 		$sql.="{$this->prixDeBase},";
 		$sql.="{$this->stock},";
 		$sql.="'{$this->categorie}',";
-		$sql.="{$this->baremePromo},";
+		$sql.="0,";
 		$sql.="'{$this->idRayon}')";
 		Site::debug($sql);
 		$res=DB::Sql($sql);
@@ -147,7 +147,7 @@ Class Produit {
 		$sql.="prixDeBase={$this->prixDeBase},";
 		$sql.="stock={$this->stock},";
 		$sql.="categorie='{$this->categorie}',";
-		$sql.="baremePromo={$this->baremePromo},";
+		//$sql.="baremePromo={$this->baremePromo},";
 		$sql.="idRayon='{$this->idRayon}' ";
 		$sql.="WHERE id={$this->id}";
 		Site::debug($sql);

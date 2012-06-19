@@ -28,6 +28,7 @@
 		
 		<label>Rayon</label>
 		<select id='rech_idRayon' name='rech_idRayon'>
+			<option value='0'>---------</option>
 			<?php
 				foreach($lr as $l=>$r){
 					echo"<option value='{$r->theme}'>{$r->theme}</option>";
