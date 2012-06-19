@@ -4,14 +4,16 @@ Class ResponsableMarketing {
 	//Attributs	
 	
 	//Méthodes statiques
-    static public function Connection($login, $pass) {
+    public static function Connection($login, $pass) {
+	
 		// table tresponsablemarketing
-		$sql = "select login, mdp from tresponsablemarketing where $login = login and $pass = mdp";
-		$res = DB::Sql($sql);
+		$sql = "SELECT login, mdp FROM tresponsablemarketing where login='$login' and mdp='$pass'";
+		
+		$res = DB::Sql($sql);			
 		$res2 = pg_fetch_assoc($res);
 		
 		// si login et mdp trouvés alors, il peut se connecter.
-		if ($res2['login'] && $res2['mdp']) {
+		if (isset($res2['login']) && isset($res2['mdp'])) {
 			return true;
 		} else {
 			return false;

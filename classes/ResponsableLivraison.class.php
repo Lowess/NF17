@@ -4,9 +4,9 @@ Class ResponsableLivraison {
 	//Attributs
 	
 	//Méthodes statiques
-	static public function Connection($login, $pass) {
+	public static function Connection($login, $pass) {
 		// table tresponsablelivraison
-		$sql = "select login, mdp from tresponsablelivraison where $login = login and $pass = mdp";
+		$sql = "SELECT login, mdp FROM tresponsablelivraison where login='$login' and mdp='$pass'";
 		$res = DB::Sql($sql);
 		$res2 = pg_fetch_assoc($res);
 		

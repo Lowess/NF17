@@ -7,6 +7,7 @@ switch(Form::get('action'))
 		login_client();
 		break;
 	case 'connectionMarketing':  
+		Site::debug("qsdqsd");
 		login_marketing();
 		break;
 	case 'connectionCatalogue':  
@@ -43,10 +44,11 @@ function login_client()
 	if (Site::messages())
 		Site::liste_message();
 		
-	$user = Client::Connection(DB::ProtectData(Form::get('Login')),DB::ProtectData(Form::get('Pass')));
+	$user = Client::Connection(Form::get('Login'),Form::get('Pass'));
 	
 	if (!$user) {
 		Site::message_info("Mot de passe ou login invalide");
+		Site::redirect("index.php");
 	} else {
 		$userName = 'Client';
 		Session::ouvrir($userName);
@@ -54,18 +56,17 @@ function login_client()
 		Site::redirect("index.php");
 	}
 }
-
+	
 
 // connexion d'un Responsable catalogue à la base
 function login_catalogue()
 {
-	if (Site::messages())
-		Site::liste_message();
 		
-	$user = ResponsableCatalogue::Connection(DB::ProtectData(Form::get('Login')),DB::ProtectData(Form::get('Pass')));
+	$user = ResponsableCatalogue::Connection(Form::get('Login'),Form::get('Pass'));
 	
 	if (!$user) {
 		Site::message_info("Mot de passe ou login invalide");
+		Site::redirect("index.php");
 	} else {
 		$userName = 'Responsable catalogue';
 		Session::ouvrir($userName);
@@ -77,31 +78,28 @@ function login_catalogue()
 // connexion d'un Responsable marketing à la base
 function login_marketing()
 {
-	if (Site::messages())
-		Site::liste_message();
-		
-	$user = ResponsableMarketing::Connection(DB::ProtectData(Form::get('Login')),DB::ProtectData(Form::get('Pass')));
+	$user = ResponsableMarketing::Connection(Form::get('Login'),Form::get('Pass'));
 	
 	if (!$user) {
 		Site::message_info("Mot de passe ou login invalide");
+		Site::redirect("index.php");
 	} else {
 		$userName = 'Responsable marketing';
 		Session::ouvrir($userName);
 		Site::message_info("Vous êtes connecté");
 		Site::redirect("index.php");
 	}
+	
 }
 
 // connexion d'un Responsable livraison à la base
 function login_livraison()
 {
-	if (Site::messages())
-		Site::liste_message();
-		
-	$user = ResponsableLivraison::Connection(DB::ProtectData(Form::get('Login')),DB::ProtectData(Form::get('Pass')));
+	$user = ResponsableLivraison::Connection(Form::get('Login'),Form::get('Pass'));
 	
 	if (!$user) {
 		Site::message_info("Mot de passe ou login invalide");
+		Site::redirect("index.php");
 	} else {
 		$userName = 'Responsable livraison';
 		Session::ouvrir($userName);

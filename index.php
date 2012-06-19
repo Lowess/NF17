@@ -75,6 +75,11 @@ Controller::load_content();
 				Controller::get_content();
 			?>	
 		</div>
+		<?php
+		// Vous êtes déconnecté / connecté 
+			if(Site::messages())
+				Site::liste_message();
+		?>
 	</body>				
 </html>
 
