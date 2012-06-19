@@ -30,7 +30,7 @@ switch(Form::get('action'))
 		else
 		{
 print <<<ENDFORM
-		<form action='?module=login&action=Login' method='post' class='login'>
+		<form action='?module=Login&action=Login' method='post' class='login'>
 			<input type='text' name='Login' title='Login de connexion'>
 			<input type='password' name='Pass' title='Mot de passe'>
 			<input type='submit' value='Connexion'>
