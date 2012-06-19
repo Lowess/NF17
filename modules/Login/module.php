@@ -50,8 +50,7 @@ function login_client()
 		Site::message_info("Mot de passe ou login invalide");
 		Site::redirect("index.php");
 	} else {
-		$userName = 'client';
-		Session::ouvrir($userName);
+		Session::ouvrir($user);
 		Site::message_info("Vous êtes connecté");
 		Site::redirect("index.php");
 	}
@@ -68,8 +67,7 @@ function login_catalogue()
 		Site::message_info("Mot de passe ou login invalide");
 		Site::redirect("index.php");
 	} else {
-		$userName = 'responsableCatalogue';
-		Session::ouvrir($userName);
+		Session::ouvrir($user);
 		Site::message_info("Vous êtes connecté");
 		Site::redirect("index.php");
 	}
@@ -84,12 +82,10 @@ function login_marketing()
 		Site::message_info("Mot de passe ou login invalide");
 		Site::redirect("index.php");
 	} else {
-		$userName = 'responsableMarketing';
-		Session::ouvrir($userName);
+		Session::ouvrir($user);
 		Site::message_info("Vous êtes connecté");
 		Site::redirect("index.php");
-	}
-	
+	}	
 }
 
 // connexion d'un Responsable livraison à la base
@@ -101,11 +97,11 @@ function login_livraison()
 		Site::message_info("Mot de passe ou login invalide");
 		Site::redirect("index.php");
 	} else {
-		$userName = 'responsableLivraison';
-		Session::ouvrir($userName);
+		Session::ouvrir($user);
 		Site::message_info("Vous êtes connecté");
 		Site::redirect("index.php");
 	}
+
 }
 
 

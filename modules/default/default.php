@@ -30,7 +30,8 @@ L'INITIALISATION DE MES VARIABLES PHP SE FONT DANS LE MODULE! -->
 									echo"<td>$p->prixDeBase</td>";
 									echo"<td>$p->categorie</td>";
 									echo"<td>$p->baremePromo</td>";
-									if(isset(Session::$user) && Session::$user == 'client')
+									Site::debug($_SESSION['user']);
+									if(isset($_SESSION['user']) && $_SESSION['user']->type == 'client')
 										echo"<td><a href='?module=default&action=ajout&id={$p->id}#$ancre'><img src='template/panier.png' title='Ajouter au Panier'/></a></td>";
 							echo"</tr>";
 						}

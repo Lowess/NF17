@@ -50,7 +50,7 @@ Controller::load_content();
 			
 			// si c'est le client
 			// le client ne voit aucun menu admistrateur
-			if (isset($_SESSION['user']) && $_SESSION['user'] == 'client') {
+			if (isset($_SESSION['user']) && $_SESSION['user']->type == 'client') {
 			?>
 				<div id='liens'>
 					<a href="?module=Panier">Panier</a>
@@ -58,7 +58,7 @@ Controller::load_content();
 			<?php
 			} else {
                 // responsable marketing
-                if (isset($_SESSION['user']) && $_SESSION['user'] == 'responsableMarketing') {
+                if (isset($_SESSION['user']) && $_SESSION['user']->type == 'responsableMarketing') {
             ?>
                 <div id='liens'>
                     Ceci est l'accès aux différents modules<br />
@@ -69,7 +69,7 @@ Controller::load_content();
                 </div>
             <?php
                 // responsable catalogue
-                } else if( isset($_SESSION['user']) && $_SESSION['user'] == 'responsableCatalogue') {
+                } else if( isset($_SESSION['user']) && $_SESSION['user']->type == 'responsableCatalogue') {
             ?>
                 <div id='liens'>
                     Ceci est l'accès aux différents modules<br />
@@ -78,7 +78,7 @@ Controller::load_content();
                 </div>
             <?php
                 // responsable livraison
-                } else if (isset($_SESSION['user']) && $_SESSION['user'] == 'responsableLivraison') {
+                } else if (isset($_SESSION['user']) && $_SESSION['user']->type == 'responsableLivraison') {
             ?>
                 <div id='liens'>
                     Ceci est l'accès aux différents modules<br /> 
@@ -104,9 +104,9 @@ Controller::load_content();
 			if(Site::messages())
 				Site::liste_message();
 		?>
-	
 		<div id='contenu'>
 			<?php
+		
 				Controller::get_content();
 			?>	
 		</div>
