@@ -52,7 +52,10 @@ Controller::load_content();
 				Ceci est l'accès aux différents modules<br />
 				<a href="?module=Rayon">Rayon</a>
 				<a href="?module=Produit">Produits</a>
-				<a href="">Pannier</a>
+				<a href="?module=Pannier">Pannier</a>
+				<a href="?module=StatistiqueClient">Statistique Client</a>
+				<a href="?module=PointFidelite">Gestion points de fidelité</a>
+				<a href="?module=BaremePromo">Gestion des Promotions</a>
 			</div>
 		</div>
 		
