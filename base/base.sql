@@ -289,7 +289,7 @@ CREATE FUNCTION trig_commande() RETURNS trigger AS $trig_commande$
 		SELECT currval('seq_tpanier') INTO idPanier 
 		FROM tPanier;
 
-		INSERT INTO tcommande VALUES(idPanier, to_timestamp(NOW(),'DD Mon YYYY'),'en preparation', NULL, NULL, NULL);
+		INSERT INTO tcommande VALUES(idPanier, NOW(), 'en preparation', NULL, NULL, NULL);
 
         RETURN NEW;
     END;

@@ -50,15 +50,17 @@ function traitement(){
 	$panier->Creer($_SESSION['user']->login);
 	Site::debug($panier);
 	$insert=$panier->Enregistrer();
+	//Trigger tCommande déclenché	
 	
 	//tContient
 	$c=new Contient();
 	foreach($_SESSION['panier'] as $id=>$qte){
 		$prod=Produit::ChercherParId($id);
 		$c->Creer($id,$insert,$qte,$prod->prixDeBase);
+		Site::debug($c);
 		$c->Enregistrer();
 	}
-	//Trigger tCommande
+
 	
 }
 

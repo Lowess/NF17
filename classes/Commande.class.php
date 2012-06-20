@@ -115,8 +115,10 @@ Class Commande {
 			$c->dateValidation=$e2[2]."/".$e2[1]."/".$e2[0];
 		
 			//Gére l'heure de livraison
-			$h=explode(" ",$c->heureLivraison);
-			$c->heureLivraison=$h[1];
+			if(!empty($c->heureLivraison)){
+				$h=explode(" ",$c->heureLivraison);
+				$c->heureLivraison=$h[1];
+			}
 			$res[]=$c;
 		}
 		return $res;
