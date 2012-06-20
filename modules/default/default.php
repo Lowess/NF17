@@ -9,7 +9,7 @@ L'INITIALISATION DE MES VARIABLES PHP SE FONT DANS LE MODULE! -->
 	<?php
 		foreach($tab2 as $rayon => $r){
 			$ancre=$rayon;
-			echo "<fieldset style='clear:left;' id='$ancre'>";
+			echo "<fieldset style='clear:left;'>";
 			echo"<legend>Rayon: $rayon</legend>";
 				if(!empty($r)){
 					echo"<table border=1>";
@@ -31,7 +31,7 @@ L'INITIALISATION DE MES VARIABLES PHP SE FONT DANS LE MODULE! -->
 									echo"<td>$p->categorie</td>";
 									echo"<td>$p->baremePromo</td>";
 									if(isset($_SESSION['user']) && $_SESSION['user']->type == 'client')
-										echo"<td><a href='?module=default&action=ajout&id={$p->id}#$ancre'><img src='template/panier.png' title='Ajouter au Panier'/></a></td>";
+										echo"<td><a href='?module=default&action=ajout&id={$p->id}'><img src='template/panier.png' title='Ajouter au Panier'/></a></td>";
 							echo"</tr>";
 						}
 					echo"</table>";
