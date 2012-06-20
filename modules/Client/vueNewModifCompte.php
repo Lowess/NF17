@@ -1,4 +1,4 @@
-<form  enctype="multipart/form-data" name="inscription" action="?module=Client&action=inscription" method="POST">
+<form  enctype="multipart/form-data" name="inscription" action="?module=Client&action=valide" method="POST">
 	<fieldset>
 		
 		<?php if (!isset($Cli)) {

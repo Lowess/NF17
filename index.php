@@ -54,6 +54,7 @@ Controller::load_content();
 			?>
 				<div id='liens'>
 					<a href="?module=Panier">Panier</a>
+					<a href="?module=Client&action=modifCompte">Modification compte</a>
 				</div>
 			<?php
 			} else {
@@ -89,7 +90,7 @@ Controller::load_content();
                 // cas d'un visiteur
             ?>
                 <div id='liens'>
-                    <a href="?module=Client&action=creationNouveauCompte">Création d'un nouveau compte</a>
+                    <a href="?module=Client&action=newCompte">Inscription</a>
                 </div>
             
             <?php
@@ -106,7 +107,6 @@ Controller::load_content();
 		?>
 		<div id='contenu'>
 			<?php
-					Site::debug($_SESSION['user']);
 				Controller::get_content();
 			?>	
 		</div>

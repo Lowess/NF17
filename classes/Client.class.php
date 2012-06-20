@@ -89,8 +89,8 @@ Class Client {
 	}
 
 	function Modifier(){
-		$sql="UPDATE ... SET ...
-			WHERE ...=''";
+		$sql="UPDATE tclient SET login='{$this->login}',mdp='{$this->mdp}',nom='{$this->nom}',prenom='{$this->prenom}',adresse='{$this->adresse}',age={$this->age}
+		WHERE login='{$this->login}'";
 		$res=DB::Sql($sql);	
 	}		
 };
