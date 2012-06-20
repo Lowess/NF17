@@ -24,11 +24,18 @@ function creationNouveauCompte() {
 }
 
 function inscription() {
-	$newCli = Client::Creer(Form::get('logiN'),,Form::get('mdp'),Form::get('nom'),Form::get('prenom'),Form::get('adresse'),Form::get('age'),'client'); 
-	$newCli->Enregistrer();
+
+	$newCli = new Client();
+	$newCli->Creer(Form::get('logiN'),Form::get('mdp'),Form::get('nom'),Form::get('prenom'),Form::get('adresse'),Form::get('age'),0 ,'client'); 
+		
+	// si client n'existe pas déjà, on le crée.
+	if (!Client::Existe($newCli->login)) {
+		$newCli->Inserer();
+	} 	
 }	
 
 function modifierCompte() {
+	// on récupère un objet
 	$Cli = Client::getParId(Form::get('id'));
 	include('vueNewModifCompte.php');
 }

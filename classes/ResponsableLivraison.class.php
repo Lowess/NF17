@@ -21,8 +21,8 @@ Class ResponsableLivraison {
 		
 		// si login et mdp trouvés alors, il peut se connecter.
 		if (isset($res2['login']) && isset($res2['mdp'])) {
-			$c = new ResponsableLivraison($res2['login'],$res2['mdp']'responsableLivraison');
-			$c->Creer();
+			$c = new ResponsableLivraison();
+			$c->Creer($res2['login'],$res2['mdp'],'responsableLivraison');
 			return $c;
 		} else {
 			return false;

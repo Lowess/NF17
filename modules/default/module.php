@@ -15,7 +15,6 @@ switch ( Form::get('action') ){
 
 
 function afficher(){
-	Site::debug($_SESSION['panier']);
 	
 	$tab=Rayon::Lister();
 	$tab2=Rayon::ListerParRayonVisiteur();

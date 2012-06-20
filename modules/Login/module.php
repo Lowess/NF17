@@ -77,6 +77,7 @@ function login_catalogue()
 function login_marketing()
 {
 	$user = ResponsableMarketing::Connection(Form::get('Login'),Form::get('Pass'));
+
 	
 	if (!$user) {
 		Site::message_info("Mot de passe ou login invalide");

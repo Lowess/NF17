@@ -33,23 +33,36 @@ Class Client {
 		// si login et mdp trouvés alors, il peut se connecter.
 		if (isset($res2['login']) && isset($res2['mdp'])) {
 			$c = new Client();
-			$c->Creer($res2['login'],$res2['mdp'],$res2['nom'],$res2['prenom'],$res2['adresse'],$res2['age'],$res2['adresse'],$res2['pointfidelite'],'client');
+			$c->Creer($res2['login'],$res2['mdp'],$res2['nom'],$res2['prenom'],$res2['adresse'],$res2['age'],$res2['pointfidelite'],'client');
 			return $c;
 		} else {
 			return false;
 		}	
 	}
 	
-	public function ChercherParId($id) {
-		$sql = "select * from tclient where id='$id'";
+	public static function ChercherParLogin($login) {
+		$sql = "select * from tclient where login='$login'";
 		$res = DB::Sql($sql);
 		$res2 = pg_fetch_assoc($res);
 		
 		// si login et mdp trouvés alors, il peut se connecter.
 		if (!empty($res2)) {
-			$c = new Client($res2['login'],$res2['mdp'],$res2['nom'],$res2['prenom'],$res2['adresse'],$res2['age'],$res2['adresse'],$res2['pointfidelite'],'client');
-			$c->Creer();
+			$c = new Client();
+			$c->Creer($res2['login'],$res2['mdp'],$res2['nom'],$res2['prenom'],$res2['adresse'],$res2['age'],$res2['adresse'],$res2['pointfidelite'],'client');
 			return $c;
+		} else {
+			return false;
+		}
+	}
+	
+	public static function Existe($login) {
+		$sql = "select count(*) as nb from tclient where login='$login'";
+		$res = DB::Sql($sql);
+		$res2 = pg_fetch_assoc($res);
+
+		// si login trouvér.
+		if ($res2['nb'] != 0) {
+			return true;
 		} else {
 			return false;
 		}
@@ -71,9 +84,8 @@ Class Client {
 	
 	// Méthodes de classe privées
 	function Inserer(){	
-		$sql="INSERT INTO tclient VALUES (...)";
+		$sql="INSERT INTO tclient VALUES ('{$this->login}','{$this->mdp}','{$this->nom}','{$this->prenom}','{$this->adresse}',{$this->age},{$this->pointFidelite})";
 		$res=DB::Sql($sql);
-		return mysql_insert_id();
 	}
 
 	function Modifier(){
