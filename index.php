@@ -32,12 +32,21 @@ Controller::load_content();
 	
 	</head>
 	<body>
+
 		<div id='header'>
+		<?php 
+		// si c'est le client
+		// le client ne voit aucun menu admistrateur
+		if (!isset($_SESSION['user']) || (isset($_SESSION['user']) && $_SESSION['user']->type != 'client')) {
+		?>
 			<a href="?module=ResponsableMarketing">Accès Responsable Marketing</a><br />
 			<a href="?module=ResponsableCatalogue">Accès Responsable Catalogue</a><br />
 			<a href="?module=ResponsableLivraison">Accès Responsable Livraison</a><br />
+		<?php
+		}
+		?>
 		</div>
-		
+
 		<div id='menu'>
 			
 			<div id='login'>
