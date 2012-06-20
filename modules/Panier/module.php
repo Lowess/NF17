@@ -46,12 +46,22 @@ function supprimer(){
 
 function traitement(){
 	//tPanier
-	//$panier=new Panier();
-	//$panier->Creer($_SESSION['user']->login);
-	//$panier->Enregistrer();
-	//tContient
+	$panier=new Panier();
+	$panier->Creer($_SESSION['user']->login);
+	Site::debug($panier);
+	$insert=$panier->Enregistrer();
+	//Trigger tCommande déclenché	
 	
-	//Trigger tCommande
+	//tContient
+	$c=new Contient();
+	foreach($_SESSION['panier'] as $id=>$qte){
+		$prod=Produit::ChercherParId($id);
+		$c->Creer($id,$insert,$qte,$prod->prixDeBase);
+		Site::debug($c);
+		$c->Enregistrer();
+	}
+
+	
 }
 
 ?>

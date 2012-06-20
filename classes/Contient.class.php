@@ -39,7 +39,7 @@ Class Contient {
 	//Méthodes de classe publiques
 	public function Enregistrer(){
 		//if($this->idProduit==-1)
-			$this->id=$this->Inserer();			
+			$this->Inserer();			
 		//else
 		//	$this->Modifier();
 	}
@@ -52,16 +52,22 @@ Class Contient {
 	
 	// Méthodes de classe privées
 	function Inserer(){	
-		$sql="INSERT INTO ... VALUES (...)";
+		$sql="INSERT INTO tContient VALUES (";
+		$sql.="{$this->idProduit},";
+		$sql.="{$this->idPanier},";
+		$sql.="{$this->quantite},";
+		$sql.="{$this->prixPublicUnitaire})";
 		$res=DB::Sql($sql);
-		return mysql_insert_id();
+		Site::debug($sql);
 	}
-
+	
+	/*
 	function Modifier(){
 		$sql="UPDATE ... SET ...
 			WHERE ...=''";
 		$res=DB::Sql($sql);
 	}		
+	*/
 };
 
 ?>
