@@ -21,8 +21,8 @@ Class ResponsableCatalogue {
 		
 		// si login et mdp trouvés alors, il peut se connecter.
 		if (isset($res2['login']) && isset($res2['mdp'])) {
-			$c = new ResponsableCatalogue($res2['login'],$res2['mdp']'responsableCatalogue');
-			$c->Creer();
+			$c = new ResponsableCatalogue();
+			$c->Creer($res2['login'],$res2['mdp'],'responsableCatalogue');
 			return $c;
 		} else {
 			return false;

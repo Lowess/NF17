@@ -1,32 +1,32 @@
 <form  enctype="multipart/form-data" name="inscription" action="?module=Client&action=inscription" method="POST">
 	<fieldset>
 		
-		<?php if (!isset($Cli) {
+		<?php if (!isset($Cli)) {
 		?>
-			<legend>Inscription</legend>
+			<legend>Inscription nouveau utilisateur</legend>
 		<?php } else {
 		?>
-			<legend>Inscription</legend>
+			<legend>Modification compte</legend>
 		<?php
 		}	
 		?>
 			<label for="logiN">Nom de login :</label>
-			<input name="logiN" type="text" id="logiN" value="<?php if (isset($Cli) echo $Cli->login_client;?>">
+			<input name="logiN" type="text" id="logiN" value="<?php if (isset($Cli)) echo $Cli->login; ?>">
 			
 			<label for="mdp">Mot de passe :</label>
-			<input name="mdp" type="text" id="mdp" value="<?php if (isset($Cli) echo $Cli->login_client;?>">
+			<input name="mdp" type="password" id="mdp" value="<?php if (isset($Cli)) echo $Cli->mdp;?>">
 			
 			<label for="nom">Nom :</label>
-			<input name="nom" type="text" id="nom" value="<?php if (isset($Cli) echo $Cli->login_client;?>">
+			<input name="nom" type="text" id="nom" value="<?php if (isset($Cli)) echo $Cli->nom;?>">
 			
 			<label for="prenom">Prénom :</label>
-			<input name="prenom" type="text" id="prenom" value="<?php if (isset($Cli) echo $Cli->login_client;?>">
+			<input name="prenom" type="text" id="prenom" value="<?php if (isset($Cli)) echo $Cli->prenom;?>">
 			
 			<label for="adresse">Adresse :</label>
-			<input name="adresse" type="text" id="adresse" value="<?php if (isset($Cli) echo $Cli->login_client;?>">
+			<input name="adresse" type="text" id="adresse" value="<?php if (isset($Cli)) echo $Cli->adresse;?>">
 			
 			<label for="age">Age :</label>
-			<input name="age" type="text" id="age" value="<?php if (isset($Cli) echo $Cli->login_client;?>">
+			<input name="age" type="text" id="age" value="<?php if (isset($Cli)) echo $Cli->age;?>">
 			
 		<p>
 			<div class="bloc_inscrip">

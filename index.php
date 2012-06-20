@@ -106,7 +106,7 @@ Controller::load_content();
 		?>
 		<div id='contenu'>
 			<?php
-		
+					Site::debug($_SESSION['user']);
 				Controller::get_content();
 			?>	
 		</div>

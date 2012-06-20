@@ -21,8 +21,8 @@ Class ResponsableMarketing {
 		
 		// si login et mdp trouvés alors, il peut se connecter.
 		if (isset($res2['login']) && isset($res2['mdp'])) {
-			$c = new ResponsableMarketing($res2['login'],$res2['mdp']'responsableMarketing');
-			$c->Creer();
+			$c = new ResponsableMarketing();
+			$c->Creer($res2['login'],$res2['mdp'],'responsableMarketing');
 			return $c;
 		} else {
 			return false;
