@@ -152,8 +152,8 @@ CREATE TABLE IF NOT EXISTS tCommande(
 	idPanier INT PRIMARY KEY,
 	dateValidation TIMESTAMP NOT NULL,
 	etatCmd eEtat NOT NULL,
-	heureLivraison TIMESTAMP NOT NULL,
-	lieuLivraison VARCHAR(200) NOT NULL,
+	heureLivraison TIMESTAMP,
+	lieuLivraison VARCHAR(200),
 	idTournee INT,
 	FOREIGN KEY (idPanier) REFERENCES tPanier (id),
 	FOREIGN KEY (idTournee) REFERENCES tTournee (id)
@@ -278,3 +278,23 @@ $trig_contient$ LANGUAGE plpgsql;
 
 CREATE TRIGGER trig_contient BEFORE INSERT OR UPDATE ON tContient
     FOR EACH ROW EXECUTE PROCEDURE trig_contient();
+
+---
+
+--Ajoute automatiquement une commande dans la base
+CREATE FUNCTION trig_commande() RETURNS trigger AS $trig_commande$			
+    DECLARE
+		idPanier INTEGER;
+    BEGIN
+		SELECT currval('seq_tpanier') INTO idPanier 
+		FROM tPanier;
+
+		INSERT INTO tcommande VALUES(idPanier, to_timestamp(NOW(),'DD Mon YYYY'),'en preparation', NULL, NULL, NULL);
+
+        RETURN NEW;
+    END;
+$trig_commande$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trig_commande AFTER INSERT ON tPanier
+    FOR EACH ROW EXECUTE PROCEDURE trig_commande();
+

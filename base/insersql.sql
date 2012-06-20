@@ -187,19 +187,19 @@ INSERT INTO tClient (login, mdp, nom, prenom, adresse, age, pointFidelite) VALUE
 INSERT INTO tClient (login, mdp, nom, prenom, adresse, age, pointFidelite) VALUES ('Olivia', 'azerty', 'Olivia', 'Reaney', '114 avenue de la Marne 60200 Compiegne', 23, 687);
 INSERT INTO tClient (login, mdp, nom, prenom, adresse, age, pointFidelite) VALUES ('Vanessa', 'azerty', 'Vanessa', 'Wolinne', '22 rue de Vignacourt 80420 Flixecourt', 22, 15);
 
-INSERT INTO tPanier (id, datePanier, login) VALUES (1, to_timestamp('12 May 2012', 'DD Mon YYYY'), 'Florian');
-INSERT INTO tPanier (id, datePanier, login) VALUES (2, to_timestamp('28 Apr 2012', 'DD Mon YYYY'), 'Florian');
-INSERT INTO tPanier (id, datePanier, login) VALUES (3, to_timestamp('26 Apr 2012', 'DD Mon YYYY'), 'Florian');
-INSERT INTO tPanier (id, datePanier, login) VALUES (4, to_timestamp('21 Apr 2012', 'DD Mon YYYY'), 'Tudor');
-INSERT INTO tPanier (id, datePanier, login) VALUES (5, to_timestamp('11 Apr 2012', 'DD Mon YYYY'), 'Tudor');
-INSERT INTO tPanier (id, datePanier, login) VALUES (6, to_timestamp('08 Apr 2012', 'DD Mon YYYY'), 'Tudor');
-INSERT INTO tPanier (id, datePanier, login) VALUES (7, to_timestamp('26 May 2012', 'DD Mon YYYY'), 'Pierre');
-INSERT INTO tPanier (id, datePanier, login) VALUES (8, to_timestamp('06 May 2012', 'DD Mon YYYY'), 'Pierre');
-INSERT INTO tPanier (id, datePanier, login) VALUES (9, to_timestamp('17 Mar 2012', 'DD Mon YYYY'), 'Pierre');
-INSERT INTO tPanier (id, datePanier, login) VALUES (10, to_timestamp('23 May 2012', 'DD Mon YYYY'), 'Qifan');
-INSERT INTO tPanier (id, datePanier, login) VALUES (11, to_timestamp('09 Mar 2012', 'DD Mon YYYY'), 'Qifan');
-INSERT INTO tPanier (id, datePanier, login) VALUES (12, to_timestamp('27 Feb 2012', 'DD Mon YYYY'), 'Mickael');
-INSERT INTO tPanier (id, datePanier, login) VALUES (13, to_timestamp('8 Feb 2012', 'DD Mon YYYY'), 'Olivia');
+INSERT INTO tPanier (id, datePanier, login) VALUES (nextval('seq_tPanier'), to_timestamp('12 May 2012', 'DD Mon YYYY'), 'Florian');
+INSERT INTO tPanier (id, datePanier, login) VALUES (nextval('seq_tPanier'), to_timestamp('28 Apr 2012', 'DD Mon YYYY'), 'Florian');
+INSERT INTO tPanier (id, datePanier, login) VALUES (nextval('seq_tPanier'), to_timestamp('26 Apr 2012', 'DD Mon YYYY'), 'Florian');
+INSERT INTO tPanier (id, datePanier, login) VALUES (nextval('seq_tPanier'), to_timestamp('21 Apr 2012', 'DD Mon YYYY'), 'Tudor');
+INSERT INTO tPanier (id, datePanier, login) VALUES (nextval('seq_tPanier'), to_timestamp('11 Apr 2012', 'DD Mon YYYY'), 'Tudor');
+INSERT INTO tPanier (id, datePanier, login) VALUES (nextval('seq_tPanier'), to_timestamp('08 Apr 2012', 'DD Mon YYYY'), 'Tudor');
+INSERT INTO tPanier (id, datePanier, login) VALUES (nextval('seq_tPanier'), to_timestamp('26 May 2012', 'DD Mon YYYY'), 'Pierre');
+INSERT INTO tPanier (id, datePanier, login) VALUES (nextval('seq_tPanier'), to_timestamp('06 May 2012', 'DD Mon YYYY'), 'Pierre');
+INSERT INTO tPanier (id, datePanier, login) VALUES (nextval('seq_tPanier'), to_timestamp('17 Mar 2012', 'DD Mon YYYY'), 'Pierre');
+INSERT INTO tPanier (id, datePanier, login) VALUES (nextval('seq_tPanier'), to_timestamp('23 May 2012', 'DD Mon YYYY'), 'Qifan');
+INSERT INTO tPanier (id, datePanier, login) VALUES (nextval('seq_tPanier'), to_timestamp('09 Mar 2012', 'DD Mon YYYY'), 'Qifan');
+INSERT INTO tPanier (id, datePanier, login) VALUES (nextval('seq_tPanier'), to_timestamp('27 Feb 2012', 'DD Mon YYYY'), 'Mickael');
+INSERT INTO tPanier (id, datePanier, login) VALUES (nextval('seq_tPanier'), to_timestamp('8 Feb 2012', 'DD Mon YYYY'), 'Olivia');
 
 
 INSERT INTO tContient (idProduit, idPanier, quantite,prixPublicUnitaire) values (5,1,3,2.96);
